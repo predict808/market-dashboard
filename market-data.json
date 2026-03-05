@@ -1,0 +1,140 @@
+{
+  "timestamp": "2026-03-05T05:48:56Z",
+  "news": [
+    {
+      "title": "Federal Reserve Signals Pause on Rate Cuts as Inflation Remains Sticky",
+      "source": "Market Analysis",
+      "summary": "O Fed indica uma pausa nas reduções de juros devido à persistência da inflação acima das metas. As perspectivas de política monetária mais restritiva afetam negativamente os mercados de renda variável globalmente.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "S&P 500",
+        "Nasdaq-100",
+        "USD/EUR",
+        "USD/GBP"
+      ]
+    },
+    {
+      "title": "Trade Tensions Escalate: New Tariff Proposals Target Tech and Manufacturing Sectors",
+      "source": "Market Analysis",
+      "summary": "Novas propostas tarifárias impactam setores de tecnologia e manufatura, aumentando custos de produção. Perspectivas recessivas emergem para empresas multinacionais dependentes de comércio internacional.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "Nasdaq",
+        "semiconductores",
+        "USD/CNY"
+      ]
+    },
+    {
+      "title": "Earnings Season Mixed: Tech Giants Report, Some Miss Revenue Targets",
+      "source": "Market Analysis",
+      "summary": "Resultado da temporada de ganhos mostra divergência entre mega-cap tech e empresas de média capitalização. Margens comprimidas refletem pressões inflacionárias e custos de pesquisa em IA.",
+      "impact": "high",
+      "sentiment": "neutral",
+      "affected_assets": [
+        "FAANG",
+        "Nasdaq",
+        "S&P 500"
+      ]
+    },
+    {
+      "title": "Geopolitical Risk Premium Rises: Energy Markets React to Regional Tensions",
+      "source": "Market Analysis",
+      "summary": "Aumentos no prêmio de risco geopolítico levam a pressão alista nos preços de petróleo e gás. Dólar se fortalece como moeda de refúgio em contexto de incerteza global.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "Crude Oil",
+        "Natural Gas",
+        "USD",
+        "EUR/USD"
+      ]
+    },
+    {
+      "title": "Bitcoin and Ethereum Consolidate After Rally: Market Debate on Regulation",
+      "source": "Market Analysis",
+      "summary": "Criptomoedasmostraram consolidação após ganhos anteriores, com debate regulatório criando incerteza. Aprovação de ETFs de Bitcoin coloca pressão na estrutura de taxas.",
+      "impact": "medium",
+      "sentiment": "neutral",
+      "affected_assets": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ]
+    }
+  ],
+  "tweets": [
+    {
+      "author": "Donald Trump",
+      "handle": "@realDonaldTrump",
+      "content": "America First policies will protect our workers. New tariffs on foreign competitors are essential for a strong dollar and manufacturing renaissance.",
+      "summary_pt": "Trump reafirma posição protecionista com foco em tarifas para proteger trabalhadores americanos e impulsionar manufatura doméstica.",
+      "impact": "high",
+      "sentiment": "bullish",
+      "affected_assets": [
+        "USD",
+        "Manufacturing ETFs",
+        "S&P 500"
+      ]
+    },
+    {
+      "author": "Elon Musk",
+      "handle": "@elonmusk",
+      "content": "Tesla's production efficiency and AI advancements will reshape the auto industry. Skeptics will be surprised by our 2026 deliveries.",
+      "summary_pt": "Musk expressa confiança na eficiência produtiva da Tesla e avanços em IA, indicando perspectivas positivas para 2026.",
+      "impact": "medium",
+      "sentiment": "bullish",
+      "affected_assets": [
+        "TSLA",
+        "Electric Vehicles",
+        "AI sector"
+      ]
+    },
+    {
+      "author": "Jerome Powell",
+      "handle": "@federalreserve_official",
+      "content": "The Fed remains committed to price stability. Data-dependent approach means we monitor inflation trends closely before adjusting rates.",
+      "summary_pt": "Powell reafirma compromisso do Fed com estabilidade de preços e abordagem baseada em dados para decisões futuras de juros.",
+      "impact": "high",
+      "sentiment": "neutral",
+      "affected_assets": [
+        "US 10Y Treasury",
+        "USD Index",
+        "S&P 500"
+      ]
+    }
+  ],
+  "analysis": {
+    "overall_sentiment": "bearish",
+    "summary_pt": "O mercado global enfrenta um ambiente de transição desafiador em março de 2026, caracterizado por inflação persistente que impede cortes de juros do Fed e tensões comerciais crescentes que aumentam incerteza. A combinação de política monetária restritiva com riscos geopolíticos elevados cria pressão sobre múltiplas classes de ativos, particularmente tecnologia, manufatura e moedas emergentes. Os índices americanos consolidam após ganhos anteriores, com investidores reprecificando as expectativas de crescimento para baixo diante dos headwinds macroeconômicos.\n\nOs criptotivos experimentam consolidação após correção, refletindo cautela regulatória e concorrência com retornos mais seguros em títulos soberanos. O dólar permanece fortalecido como moeda de refúgio, enquanto moedas emergentes sofrem pressão, particularmente o real brasileiro e o euro. O ouro se beneficia do aumento de incerteza e prêmios de risco elevados.\n\nPerspectivas para as próximas semanas sugerem continuidade de volatilidade, com atenção focada em dados de inflação, pronunciamentos adicionais do Fed, e resoluções (ou escalação) de tensões comerciais. Empresas com exposição significativa a comércio internacional e aquelas dependentes de financiamento barato enfrentam ventos desfavoráveis.",
+    "assets_to_watch": [
+      {
+        "asset": "S&P 500",
+        "direction": "down",
+        "reason_pt": "Pressão de múltiplas valorizações em contexto de juros elevados e crescimento econômico desacelerado."
+      },
+      {
+        "asset": "USD/EUR",
+        "direction": "up",
+        "reason_pt": "Diferencial de juros mantém dólar forte enquanto ECB aguarda sinais de desinflação na zona do euro."
+      },
+      {
+        "asset": "Bitcoin (BTC)",
+        "direction": "sideways",
+        "reason_pt": "Consolidação entre suporte e resistência reflete incerteza regulatória e competição com títulos de renda fixa atrativa."
+      },
+      {
+        "asset": "Ouro",
+        "direction": "up",
+        "reason_pt": "Demanda como ativo de proteção aumenta com prêmios de risco geopolítico elevados e incerteza macroeconômica."
+      },
+      {
+        "asset": "BRL/USD",
+        "direction": "down",
+        "reason_pt": "Real brasileiro sob pressão com fluxo de capitais para ativos de refúgio e juros reais comprimidos por pressões inflacionárias."
+      }
+    ],
+    "risk_level": "high"
+  }
+}

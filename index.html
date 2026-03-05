@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Dashboard - OpenClaw</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0f0f13; color: #e4e4e7;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+  }
+
+  /* --- Top bar --- */
+  .topbar {
+    display: flex; align-items: center; gap: 10px;
+    padding: 16px 24px 0; margin-bottom: 2px;
+  }
+  .topbar h1 { font-size: 1.3rem; color: #a78bfa; font-weight: 700; }
+  .live-badge {
+    display: flex; align-items: center; gap: 5px;
+    background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.25);
+    border-radius: 12px; padding: 2px 10px; font-size: 0.65rem; color: #4ade80;
+  }
+  .live-dot {
+    width: 6px; height: 6px; background: #4ade80; border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+  .meta-line {
+    padding: 0 24px; color: #52525b; font-size: 0.7rem; margin-bottom: 12px;
+  }
+
+  /* --- Tabs --- */
+  .tabs {
+    display: flex; gap: 0; border-bottom: 1px solid #27272a;
+    padding: 0 24px; margin-bottom: 0;
+  }
+  .tab {
+    padding: 10px 20px; font-size: 0.85rem; color: #71717a;
+    cursor: pointer; border-bottom: 2px solid transparent;
+    transition: all 0.2s; font-weight: 500; user-select: none;
+  }
+  .tab:hover { color: #a1a1aa; }
+  .tab.active { color: #e4e4e7; border-bottom-color: #a78bfa; }
+
+  /* --- Content --- */
+  .tab-content { display: none; padding: 20px 24px; }
+  .tab-content.active { display: block; }
+
+  /* --- Period buttons --- */
+  .period-bar {
+    display: flex; gap: 4px; margin-bottom: 16px;
+  }
+  .period-btn {
+    background: #18181b; border: 1px solid #27272a; color: #71717a;
+    padding: 4px 12px; border-radius: 6px; font-size: 0.75rem;
+    cursor: pointer; transition: all 0.15s; font-weight: 500;
+  }
+  .period-btn:hover { color: #a1a1aa; border-color: #3f3f46; }
+  .period-btn.active { background: #a78bfa; color: #0f0f13; border-color: #a78bfa; }
+
+  /* --- Index chart card --- */
+  .index-chart-card {
+    background: #18181b; border: 1px solid #27272a;
+    border-radius: 12px; padding: 16px; margin-bottom: 20px;
+  }
+  .index-chart-card canvas { width: 100% !important; height: 200px !important; }
+
+  /* --- Tables --- */
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th {
+    text-align: left; color: #52525b; font-weight: 500;
+    padding: 8px 12px; border-bottom: 1px solid #27272a; font-size: 0.75rem;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  th:not(:first-child) { text-align: right; }
+  td { padding: 12px; border-bottom: 1px solid #1e1e24; }
+  td:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+  .sym { font-weight: 600; color: #e4e4e7; }
+  tr { transition: background 0.15s; }
+  tr:hover { background: #18181b; }
+  .up { color: #4ade80; }
+  .down { color: #f87171; }
+  .na { color: #52525b; }
+
+  /* --- Charts grid --- */
+  .charts-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px;
+  }
+  .chart-card {
+    background: #18181b; border: 1px solid #27272a;
+    border-radius: 12px; padding: 16px;
+  }
+  .chart-card h3 { font-size: 0.8rem; color: #71717a; margin-bottom: 12px; font-weight: 500; }
+  .chart-card canvas { width: 100% !important; max-height: 240px; }
+  .chart-card.full { grid-column: 1 / -1; }
+
+  /* --- News / Tweets / Analysis cards --- */
+  .news-meta {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 16px;
+    color: #52525b; font-size: 0.75rem;
+  }
+  .news-meta .updated-time { color: #a78bfa; font-weight: 500; }
+  .news-list { display: flex; flex-direction: column; gap: 12px; }
+  .news-card, .tweet-card {
+    background: #18181b; border: 1px solid #27272a;
+    border-radius: 10px; padding: 14px 16px; transition: border-color 0.2s;
+  }
+  .news-card:hover, .tweet-card:hover { border-color: #3f3f46; }
+  .news-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 6px; }
+  .news-title { font-weight: 600; font-size: 0.9rem; color: #e4e4e7; line-height: 1.3; }
+  .news-source { font-size: 0.7rem; color: #52525b; margin-bottom: 6px; }
+  .news-summary { font-size: 0.8rem; color: #a1a1aa; line-height: 1.5; }
+  .impact-badge {
+    display: inline-flex; align-items: center; padding: 2px 8px;
+    border-radius: 10px; font-size: 0.65rem; font-weight: 600;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .impact-high { background: rgba(248,113,113,0.15); color: #f87171; border: 1px solid rgba(248,113,113,0.3); }
+  .impact-medium { background: rgba(250,204,21,0.15); color: #facc15; border: 1px solid rgba(250,204,21,0.3); }
+  .impact-low { background: rgba(74,222,128,0.15); color: #4ade80; border: 1px solid rgba(74,222,128,0.3); }
+  .sentiment-badge {
+    display: inline-flex; align-items: center; padding: 2px 8px;
+    border-radius: 10px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;
+  }
+  .sentiment-bullish { background: rgba(74,222,128,0.15); color: #4ade80; border: 1px solid rgba(74,222,128,0.3); }
+  .sentiment-bearish { background: rgba(248,113,113,0.15); color: #f87171; border: 1px solid rgba(248,113,113,0.3); }
+  .sentiment-neutral { background: rgba(161,161,170,0.15); color: #a1a1aa; border: 1px solid rgba(161,161,170,0.3); }
+  .tweet-author { font-weight: 600; color: #e4e4e7; font-size: 0.85rem; }
+  .tweet-handle { color: #52525b; font-size: 0.75rem; margin-left: 4px; }
+  .tweet-content { font-size: 0.82rem; color: #d4d4d8; line-height: 1.5; margin: 8px 0; font-style: italic; }
+  .tweet-analysis { font-size: 0.78rem; color: #a1a1aa; }
+  .assets-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 8px; }
+  .asset-tag {
+    background: #27272a; color: #a1a1aa; padding: 1px 6px;
+    border-radius: 4px; font-size: 0.65rem; font-weight: 500;
+  }
+  .analysis-section {
+    background: #18181b; border: 1px solid #27272a;
+    border-radius: 12px; padding: 20px; margin-bottom: 16px;
+  }
+  .analysis-section h3 {
+    font-size: 0.85rem; color: #a78bfa; margin-bottom: 12px; font-weight: 600;
+  }
+  .analysis-text { font-size: 0.85rem; color: #d4d4d8; line-height: 1.7; white-space: pre-line; }
+  .risk-indicator {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 12px; border-radius: 8px; font-size: 0.8rem; font-weight: 600;
+  }
+  .risk-low { background: rgba(74,222,128,0.15); color: #4ade80; }
+  .risk-moderate { background: rgba(250,204,21,0.15); color: #facc15; }
+  .risk-high { background: rgba(248,113,113,0.15); color: #f87171; }
+  .risk-extreme { background: rgba(239,68,68,0.3); color: #ef4444; }
+  .watch-list { display: flex; flex-direction: column; gap: 8px; }
+  .watch-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 14px; background: #1a1a2e; border-radius: 8px;
+  }
+  .watch-asset { font-weight: 600; color: #e4e4e7; min-width: 80px; }
+  .watch-direction { font-weight: 600; font-size: 0.8rem; }
+  .watch-direction.dir-up { color: #4ade80; }
+  .watch-direction.dir-down { color: #f87171; }
+  .watch-direction.dir-sideways { color: #facc15; }
+  .watch-reason { font-size: 0.78rem; color: #a1a1aa; }
+  .no-data-msg {
+    text-align: center; color: #52525b; padding: 40px 0; font-size: 0.85rem;
+  }
+
+  /* --- Status / Footer --- */
+  #status { padding: 0 24px; color: #facc15; font-size: 0.7rem; }
+  #status.error { color: #f87171; }
+  .footer {
+    padding: 24px; color: #3f3f46; font-size: 0.7rem; text-align: center;
+    border-top: 1px solid #1e1e24; margin-top: 20px;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 768px) {
+    .tabs { overflow-x: auto; }
+    .tab { padding: 10px 14px; font-size: 0.8rem; white-space: nowrap; }
+    .tab-content { padding: 16px; }
+    .charts-grid { grid-template-columns: 1fr; }
+    table { font-size: 0.78rem; }
+    td, th { padding: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Market Dashboard</h1>
+  <div class="live-badge"><span class="live-dot"></span> LIVE</div>
+</div>
+<p class="meta-line">
+  <span id="timestamp">--</span>
+  <span id="countdown" style="margin-left:8px;color:#3f3f46;"></span>
+</p>
+<p id="status"></p>
+
+<div class="tabs">
+  <div class="tab active" data-tab="indices">Indices</div>
+  <div class="tab" data-tab="crypto">Cripto</div>
+  <div class="tab" data-tab="gold">Ouro</div>
+  <div class="tab" data-tab="forex">Forex</div>
+  <div class="tab" data-tab="charts">Graficos</div>
+  <div class="tab" data-tab="news">Noticias</div>
+  <div class="tab" data-tab="tweets">Tweets</div>
+  <div class="tab" data-tab="analysis">Analise</div>
+  <div class="tab" data-tab="calendar">Calendario</div>
+</div>
+
+<!-- ===== INDICES ===== -->
+<div class="tab-content active" id="panel-indices">
+  <div class="period-bar">
+    <button class="period-btn active" data-range="1d" data-interval="5m">1D</button>
+    <button class="period-btn" data-range="5d" data-interval="15m">1W</button>
+    <button class="period-btn" data-range="1mo" data-interval="1d">1M</button>
+    <button class="period-btn" data-range="6mo" data-interval="1d">6M</button>
+    <button class="period-btn" data-range="1y" data-interval="1wk">1Y</button>
+    <button class="period-btn" data-range="max" data-interval="1mo">Max</button>
+  </div>
+  <div class="index-chart-card">
+    <canvas id="indexChart"></canvas>
+  </div>
+  <table>
+    <thead><tr><th>Indice</th><th>Preco</th><th>Variacao</th><th>%</th></tr></thead>
+    <tbody id="indices-body"><tr><td colspan="4" class="na">Carregando...</td></tr></tbody>
+  </table>
+</div>
+
+<!-- ===== CRIPTO ===== -->
+<div class="tab-content" id="panel-crypto">
+  <table>
+    <thead><tr><th>Ativo</th><th>Preco</th><th>24h</th><th>7d</th><th>Market Cap</th><th>Volume 24h</th></tr></thead>
+    <tbody id="crypto-body"><tr><td colspan="6" class="na">Carregando...</td></tr></tbody>
+  </table>
+</div>
+
+<!-- ===== OURO ===== -->
+<div class="tab-content" id="panel-gold">
+  <table>
+    <thead><tr><th>Ativo</th><th>Preco</th><th>24h</th><th>7d</th><th>Market Cap</th><th>Volume 24h</th></tr></thead>
+    <tbody id="gold-body"><tr><td colspan="6" class="na">Carregando...</td></tr></tbody>
+  </table>
+</div>
+
+<!-- ===== FOREX ===== -->
+<div class="tab-content" id="panel-forex">
+  <table>
+    <thead><tr><th>Par</th><th>Preco (USD)</th><th>Taxa bruta</th></tr></thead>
+    <tbody id="forex-body"><tr><td colspan="3" class="na">Carregando...</td></tr></tbody>
+  </table>
+</div>
+
+<!-- ===== GRAFICOS ===== -->
+<div class="tab-content" id="panel-charts">
+  <div class="charts-grid">
+    <div class="chart-card"><h3>Variacao 24h (%)</h3><canvas id="chart24h"></canvas></div>
+    <div class="chart-card"><h3>Variacao 7d (%)</h3><canvas id="chart7d"></canvas></div>
+    <div class="chart-card"><h3>Market Cap (Cripto)</h3><canvas id="chartMcap"></canvas></div>
+    <div class="chart-card"><h3>Volume 24h (Cripto)</h3><canvas id="chartVol"></canvas></div>
+    <div class="chart-card full"><h3>Forex - Cotacao em USD</h3><canvas id="chartForex"></canvas></div>
+  </div>
+</div>
+
+<!-- ===== NOTICIAS ===== -->
+<div class="tab-content" id="panel-news">
+  <div class="news-meta">
+    Ultima atualizacao: <span class="updated-time" id="news-timestamp">--</span>
+  </div>
+  <div class="news-list" id="news-list">
+    <div class="no-data-msg">Nenhuma noticia carregada. Execute o script de busca ou aguarde a proxima atualizacao automatica.</div>
+  </div>
+</div>
+
+<!-- ===== TWEETS ===== -->
+<div class="tab-content" id="panel-tweets">
+  <div class="news-meta">
+    Ultima atualizacao: <span class="updated-time" id="tweets-timestamp">--</span>
+  </div>
+  <div class="news-list" id="tweets-list">
+    <div class="no-data-msg">Nenhum tweet carregado. Execute o script de busca ou aguarde a proxima atualizacao automatica.</div>
+  </div>
+</div>
+
+<!-- ===== ANALISE ===== -->
+<div class="tab-content" id="panel-analysis">
+  <div class="news-meta">
+    Ultima atualizacao: <span class="updated-time" id="analysis-timestamp">--</span>
+  </div>
+  <div id="analysis-content">
+    <div class="no-data-msg">Nenhuma analise carregada. Execute o script de busca ou aguarde a proxima atualizacao automatica.</div>
+  </div>
+</div>
+
+<!-- ===== CALENDARIO ===== -->
+<div class="tab-content" id="panel-calendar">
+  <div class="tradingview-widget-container" style="width:100%;height:700px;">
+    <div class="tradingview-widget-container__widget" style="width:100%;height:100%;"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+    {
+      "colorTheme": "dark",
+      "isTransparent": true,
+      "width": "100%",
+      "height": "100%",
+      "locale": "br",
+      "importanceFilter": "-1,0,1",
+      "countryFilter": "ar,au,br,ca,cn,fr,de,in,id,it,jp,kr,mx,ru,sa,za,tr,gb,us,eu"
+    }
+    </script>
+  </div>
+</div>
+
+<div class="footer">OpenClaw Market Analysis &middot; Auto-refresh 60s &middot; Noticias/Analise: 7:30 AM &amp; 5:30 PM (NY) &middot; Dados: CoinGecko, Frankfurter, Yahoo Finance, TradingView</div>
+
+<script>
+// ============================================================
+//  CONFIG
+// ============================================================
+const REFRESH = 60;
+const COIN_IDS = 'bitcoin,ethereum,solana,binancecoin,ripple,tether-gold';
+const COIN_MAP = { bitcoin:'BTC', ethereum:'ETH', solana:'SOL', binancecoin:'BNB', ripple:'XRP' };
+const FOREX_SYM = 'EUR,GBP,BRL';
+
+const INDICES = [
+  { symbol: '^DJI',     name: 'Dow Jones' },
+  { symbol: '^GSPC',    name: 'S&P 500' },
+  { symbol: '^IXIC',    name: 'Nasdaq' },
+  { symbol: '^VIX',     name: 'S&P 500 VIX' },
+  { symbol: 'DX-Y.NYB', name: 'Dollar Index' },
+];
+
+const PROXY = 'https://corsproxy.io/?url=';
+let charts = {}, secondsLeft = 0;
+let selectedIndex = '^DJI';
+let selectedRange = '1d', selectedInterval = '5m';
+let indicesData = [];
+
+// ============================================================
+//  FORMATTERS
+// ============================================================
+const fP = v => {
+  if (v == null) return 'N/A';
+  if (Math.abs(v) >= 1000) return v.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+  if (Math.abs(v) >= 1) return v.toFixed(2);
+  return v.toFixed(4);
+};
+const fPrice = v => v == null ? 'N/A' : '$' + fP(v);
+const fPct = v => v == null ? 'N/A' : (v>=0?'+':'') + v.toFixed(2) + '%';
+const fLarge = v => {
+  if (v==null) return 'N/A';
+  if (v>=1e12) return '$'+(v/1e12).toFixed(2)+'T';
+  if (v>=1e9) return '$'+(v/1e9).toFixed(2)+'B';
+  if (v>=1e6) return '$'+(v/1e6).toFixed(2)+'M';
+  return '$'+v.toLocaleString();
+};
+const fChg = v => v == null ? 'N/A' : (v>=0?'+':'') + fP(v);
+const cls = v => v==null?'na':v>=0?'up':'down';
+const barC = v => v>=0?'#4ade80':'#f87171';
+
+// ============================================================
+//  TABS
+// ============================================================
+document.querySelectorAll('.tab').forEach(t => {
+  t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('panel-' + t.dataset.tab).classList.add('active');
+  });
+});
+
+// ============================================================
+//  PERIOD BUTTONS
+// ============================================================
+document.querySelectorAll('.period-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.period-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    selectedRange = b.dataset.range;
+    selectedInterval = b.dataset.interval;
+    fetchIndexChart(selectedIndex, selectedRange, selectedInterval);
+  });
+});
+
+// ============================================================
+//  FETCH FUNCTIONS
+// ============================================================
+async function fetchJSON(url, timeout = 12000) {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), timeout);
+  try {
+    const r = await fetch(url, { signal: ctrl.signal });
+    if (!r.ok) throw new Error(r.status);
+    return await r.json();
+  } finally { clearTimeout(t); }
+}
+
+async function fetchCrypto() {
+  return fetchJSON(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${COIN_IDS}&order=market_cap_desc&per_page=10&page=1&sparkline=false&price_change_percentage=7d`);
+}
+async function fetchForex() {
+  return fetchJSON(`https://api.frankfurter.app/latest?base=USD&symbols=${FOREX_SYM}`);
+}
+
+async function fetchYahooQuote(symbol) {
+  const url = `${PROXY}${encodeURIComponent(`https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?range=1d&interval=5m`)}`;
+  const data = await fetchJSON(url);
+  const result = data.chart?.result?.[0];
+  if (!result) return null;
+  const meta = result.meta;
+  const price = meta.regularMarketPrice;
+  const prevClose = meta.chartPreviousClose ?? meta.previousClose;
+  const change = prevClose ? price - prevClose : null;
+  const changePct = prevClose ? ((price - prevClose) / prevClose) * 100 : null;
+  return { price, change, changePct, prevClose };
+}
+
+async function fetchIndexChart(symbol, range, interval) {
+  try {
+    const url = `${PROXY}${encodeURIComponent(`https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?range=${range}&interval=${interval}`)}`;
+    const data = await fetchJSON(url);
+    const result = data.chart?.result?.[0];
+    if (!result) return;
+    const timestamps = result.timestamp || [];
+    const closes = result.indicators?.quote?.[0]?.close || [];
+    renderIndexChart(timestamps, closes, symbol);
+  } catch (e) {
+    console.error('Chart fetch error:', e);
+  }
+}
+
+// ============================================================
+//  RENDER: INDICES
+// ============================================================
+async function fetchAllIndices() {
+  const results = await Promise.allSettled(INDICES.map(i => fetchYahooQuote(i.symbol)));
+  indicesData = INDICES.map((idx, i) => {
+    const r = results[i].status === 'fulfilled' ? results[i].value : null;
+    return { ...idx, ...(r || { price: null, change: null, changePct: null }) };
+  });
+  renderIndicesTable();
+  fetchIndexChart(selectedIndex, selectedRange, selectedInterval);
+}
+
+function renderIndicesTable() {
+  let html = '';
+  for (const d of indicesData) {
+    const sel = d.symbol === selectedIndex ? 'style="background:#1a1a2e;"' : '';
+    html += `<tr ${sel} class="idx-row" data-sym="${d.symbol}" style="cursor:pointer;">
+      <td class="sym">${d.name}</td>
+      <td>${fP(d.price)}</td>
+      <td class="${cls(d.change)}">${fChg(d.change)}</td>
+      <td class="${cls(d.changePct)}">${fPct(d.changePct)}</td>
+    </tr>`;
+  }
+  document.getElementById('indices-body').innerHTML = html;
+  document.querySelectorAll('.idx-row').forEach(row => {
+    row.addEventListener('click', () => {
+      selectedIndex = row.dataset.sym;
+      renderIndicesTable();
+      fetchIndexChart(selectedIndex, selectedRange, selectedInterval);
+    });
+  });
+}
+
+function renderIndexChart(timestamps, closes, symbol) {
+  const labels = timestamps.map(t => {
+    const d = new Date(t * 1000);
+    if (selectedRange === '1d' || selectedRange === '5d') {
+      return d.toLocaleTimeString('pt-BR', { hour:'2-digit', minute:'2-digit' });
+    }
+    return d.toLocaleDateString('pt-BR', { day:'2-digit', month:'2-digit' });
+  });
+  const data = closes.map(v => v ?? null);
+  const name = INDICES.find(i => i.symbol === symbol)?.name || symbol;
+
+  // Determine line color based on performance
+  const validData = data.filter(v => v != null);
+  const lineColor = validData.length >= 2 && validData[validData.length-1] >= validData[0] ? '#4ade80' : '#f87171';
+
+  const config = {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        data,
+        borderColor: lineColor,
+        backgroundColor: lineColor.replace(')', ',0.08)').replace('rgb', 'rgba'),
+        borderWidth: 1.5,
+        pointRadius: 0,
+        pointHitRadius: 8,
+        fill: true,
+        tension: 0.1,
+        spanGaps: true
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      animation: { duration: 300 },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          mode: 'index', intersect: false,
+          callbacks: { label: ctx => name + ': ' + fP(ctx.parsed.y) }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: '#1e1e24' },
+          ticks: { maxTicksLimit: 8, color: '#52525b', font: { size: 10 } }
+        },
+        y: {
+          grid: { color: '#1e1e24' },
+          ticks: { color: '#52525b', font: { size: 10 }, callback: v => fP(v) }
+        }
+      },
+      interaction: { mode: 'index', intersect: false }
+    }
+  };
+
+  if (charts.indexChart) {
+    charts.indexChart.data = config.data;
+    charts.indexChart.options = config.options;
+    charts.indexChart.update('none');
+  } else {
+    charts.indexChart = new Chart(document.getElementById('indexChart'), config);
+  }
+}
+
+// ============================================================
+//  RENDER: CRYPTO
+// ============================================================
+function renderCrypto(data) {
+  const crypto = {}, gold = [null];
+  for (const item of data) {
+    const e = {
+      price: item.current_price, change_24h: item.price_change_percentage_24h,
+      change_7d: item.price_change_percentage_7d_in_currency,
+      market_cap: item.market_cap, volume_24h: item.total_volume
+    };
+    if (item.id === 'tether-gold') gold[0] = e;
+    else if (COIN_MAP[item.id]) crypto[COIN_MAP[item.id]] = e;
+  }
+  let h = '';
+  for (const [s,d] of Object.entries(crypto)) {
+    h += `<tr><td class="sym">${s}</td><td>${fPrice(d.price)}</td>
+      <td class="${cls(d.change_24h)}">${fPct(d.change_24h)}</td>
+      <td class="${cls(d.change_7d)}">${fPct(d.change_7d)}</td>
+      <td>${fLarge(d.market_cap)}</td><td>${fLarge(d.volume_24h)}</td></tr>`;
+  }
+  document.getElementById('crypto-body').innerHTML = h;
+  const g = gold[0];
+  if (g) {
+    document.getElementById('gold-body').innerHTML = `<tr><td class="sym">XAU/USD</td>
+      <td>${fPrice(g.price)}</td><td class="${cls(g.change_24h)}">${fPct(g.change_24h)}</td>
+      <td class="${cls(g.change_7d)}">${fPct(g.change_7d)}</td>
+      <td>${fLarge(g.market_cap)}</td><td>${fLarge(g.volume_24h)}</td></tr>`;
+  }
+  return { crypto, gold: g };
+}
+
+// ============================================================
+//  RENDER: FOREX
+// ============================================================
+function renderForex(data) {
+  const rates = data.rates || {}, forex = {};
+  let h = '';
+  for (const c of ['EUR','GBP','BRL']) {
+    const rate = rates[c];
+    const price = rate ? +(1/rate).toFixed(6) : null;
+    forex[c+'/USD'] = { price, rate_raw: rate };
+    h += `<tr><td class="sym">${c}/USD</td><td>${fPrice(price)}</td>
+      <td style="color:#52525b">${rate ?? 'N/A'}</td></tr>`;
+  }
+  document.getElementById('forex-body').innerHTML = h;
+  return forex;
+}
+
+// ============================================================
+//  CHARTS (Graficos tab)
+// ============================================================
+Chart.defaults.color = '#71717a';
+Chart.defaults.borderColor = '#27272a';
+Chart.defaults.font.family = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif";
+Chart.defaults.font.size = 11;
+
+function updateCharts(crypto, gold, forex) {
+  const labels = [...Object.keys(crypto), 'XAU'];
+  const v24 = [...Object.values(crypto).map(d=>d.change_24h??0), gold?.change_24h??0];
+  const v7 = [...Object.values(crypto).map(d=>d.change_7d??0), gold?.change_7d??0];
+  const mL = Object.keys(crypto), mV = Object.values(crypto).map(d=>d.market_cap??0);
+  const vL = Object.keys(crypto), vV = Object.values(crypto).map(d=>d.volume_24h??0);
+  const fL = Object.keys(forex), fV = Object.values(forex).map(d=>d.price??0);
+  const mC = ['#a78bfa','#38bdf8','#facc15','#fb923c','#4ade80'];
+
+  function up(id, cfg) {
+    if (charts[id]) { charts[id].data=cfg.data; charts[id].update('none'); }
+    else charts[id] = new Chart(document.getElementById(id), cfg);
+  }
+
+  const barOpts = (pct) => ({
+    responsive:true, animation:{duration:300},
+    plugins:{legend:{display:false}, tooltip:{callbacks:{label:c=>c.parsed.y.toFixed(2)+'%'}}},
+    scales:{y:{ticks:{callback:v=>v+'%'},grid:{color:'#1e1e24'}},x:{grid:{display:false}}}
+  });
+
+  up('chart24h',{type:'bar',data:{labels,datasets:[{data:v24.map(v=>+v.toFixed(2)),backgroundColor:v24.map(barC),borderRadius:4,borderSkipped:false}]},options:barOpts()});
+  up('chart7d',{type:'bar',data:{labels,datasets:[{data:v7.map(v=>+v.toFixed(2)),backgroundColor:v7.map(barC),borderRadius:4,borderSkipped:false}]},options:barOpts()});
+
+  up('chartMcap',{type:'doughnut',data:{labels:mL,datasets:[{data:mV,backgroundColor:mC.slice(0,mL.length),borderWidth:0,hoverOffset:8}]},
+    options:{responsive:true,cutout:'55%',animation:{duration:300},plugins:{legend:{position:'right',labels:{padding:12,usePointStyle:true,pointStyle:'circle'}},
+    tooltip:{callbacks:{label:c=>{const v=c.parsed;if(v>=1e12)return(v/1e12).toFixed(2)+'T';if(v>=1e9)return(v/1e9).toFixed(2)+'B';return v.toLocaleString();}}}}}});
+
+  up('chartVol',{type:'bar',data:{labels:vL,datasets:[{data:vV,backgroundColor:'rgba(56,189,248,0.5)',borderColor:'#38bdf8',borderWidth:1,borderRadius:4}]},
+    options:{responsive:true,animation:{duration:300},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>{const v=c.parsed.y;if(v>=1e9)return'$'+(v/1e9).toFixed(2)+'B';if(v>=1e6)return'$'+(v/1e6).toFixed(2)+'M';return'$'+v.toLocaleString();}}}},
+    scales:{y:{ticks:{callback:v=>{if(v>=1e9)return(v/1e9).toFixed(0)+'B';if(v>=1e6)return(v/1e6).toFixed(0)+'M';return v;}},grid:{color:'#1e1e24'}},x:{grid:{display:false}}}}});
+
+  up('chartForex',{type:'bar',data:{labels:fL,datasets:[{data:fV.map(v=>+v.toFixed(4)),
+    backgroundColor:['rgba(167,139,250,0.5)','rgba(56,189,248,0.5)','rgba(250,204,21,0.5)'],
+    borderColor:['#a78bfa','#38bdf8','#facc15'],borderWidth:1,borderRadius:4}]},
+    options:{indexAxis:'y',responsive:true,animation:{duration:300},
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'$'+c.parsed.x.toFixed(4)}}},
+    scales:{x:{ticks:{callback:v=>'$'+v.toFixed(2)},grid:{color:'#1e1e24'}},y:{grid:{display:false}}}}});
+}
+
+// ============================================================
+//  MAIN LOOP
+// ============================================================
+async function refresh() {
+  const st = document.getElementById('status');
+  st.className = ''; st.textContent = 'Atualizando...';
+  try {
+    const [cRaw, fRaw] = await Promise.all([fetchCrypto(), fetchForex()]);
+    const { crypto, gold } = renderCrypto(cRaw);
+    const forex = renderForex(fRaw);
+    updateCharts(crypto, gold, forex);
+    st.textContent = '';
+  } catch (e) {
+    st.className = 'error'; st.textContent = 'Erro parcial: ' + e.message;
+  }
+
+  try { await fetchAllIndices(); } catch(e) {
+    console.error('Indices error:', e);
+    document.getElementById('indices-body').innerHTML = `<tr><td colspan="4" class="na">Erro ao carregar indices: ${e.message}</td></tr>`;
+  }
+
+  const now = new Date().toLocaleString('pt-BR', {
+    timeZone:'America/Sao_Paulo', hour:'2-digit',minute:'2-digit',second:'2-digit',
+    day:'2-digit',month:'2-digit',year:'numeric'
+  });
+  document.getElementById('timestamp').textContent = now;
+  secondsLeft = REFRESH;
+}
+
+function tick() {
+  secondsLeft = Math.max(0, secondsLeft - 1);
+  document.getElementById('countdown').textContent = `(${secondsLeft}s)`;
+  if (secondsLeft <= 0) refresh();
+}
+
+refresh();
+setInterval(tick, 1000);
+
+// ============================================================
+//  NEWS / TWEETS / ANALYSIS (from market-data.json)
+// ============================================================
+const IMPACT_LABEL = { high: 'ALTO', medium: 'MEDIO', low: 'BAIXO' };
+const SENTIMENT_LABEL = { bullish: 'ALTA', bearish: 'BAIXA', neutral: 'NEUTRO' };
+const DIRECTION_ICON = { up: '↑', down: '↓', sideways: '→' };
+const RISK_LABEL = { low: 'BAIXO', moderate: 'MODERADO', high: 'ALTO', extreme: 'EXTREMO' };
+
+function formatTimestamp(ts) {
+  if (!ts) return '--';
+  try {
+    return new Date(ts).toLocaleString('pt-BR', {
+      timeZone: 'America/Sao_Paulo', day:'2-digit', month:'2-digit', year:'numeric',
+      hour:'2-digit', minute:'2-digit'
+    });
+  } catch { return ts; }
+}
+
+function renderNews(news) {
+  if (!news || !news.length) return;
+  const container = document.getElementById('news-list');
+  container.innerHTML = news.map(n => `
+    <div class="news-card">
+      <div class="news-card-header">
+        <span class="news-title">${esc(n.title)}</span>
+        <span>
+          <span class="impact-badge impact-${n.impact}">${IMPACT_LABEL[n.impact] || n.impact}</span>
+          <span class="sentiment-badge sentiment-${n.sentiment}">${SENTIMENT_LABEL[n.sentiment] || n.sentiment}</span>
+        </span>
+      </div>
+      <div class="news-source">${esc(n.source || '')}</div>
+      <div class="news-summary">${esc(n.summary)}</div>
+      ${n.affected_assets?.length ? `<div class="assets-tags">${n.affected_assets.map(a => `<span class="asset-tag">${esc(a)}</span>`).join('')}</div>` : ''}
+    </div>
+  `).join('');
+}
+
+function renderTweets(tweets) {
+  if (!tweets || !tweets.length) return;
+  const container = document.getElementById('tweets-list');
+  container.innerHTML = tweets.map(t => `
+    <div class="tweet-card">
+      <div class="news-card-header">
+        <span>
+          <span class="tweet-author">${esc(t.author)}</span>
+          <span class="tweet-handle">${esc(t.handle || '')}</span>
+        </span>
+        <span>
+          <span class="impact-badge impact-${t.impact}">${IMPACT_LABEL[t.impact] || t.impact}</span>
+          <span class="sentiment-badge sentiment-${t.sentiment}">${SENTIMENT_LABEL[t.sentiment] || t.sentiment}</span>
+        </span>
+      </div>
+      <div class="tweet-content">"${esc(t.content)}"</div>
+      <div class="tweet-analysis">${esc(t.summary_pt || '')}</div>
+      ${t.affected_assets?.length ? `<div class="assets-tags">${t.affected_assets.map(a => `<span class="asset-tag">${esc(a)}</span>`).join('')}</div>` : ''}
+    </div>
+  `).join('');
+}
+
+function renderAnalysis(analysis) {
+  if (!analysis) return;
+  const container = document.getElementById('analysis-content');
+  const risk = analysis.risk_level || 'moderate';
+  const watchHtml = (analysis.assets_to_watch || []).map(a => `
+    <div class="watch-item">
+      <span class="watch-asset">${esc(a.asset)}</span>
+      <span class="watch-direction dir-${a.direction}">${DIRECTION_ICON[a.direction] || '?'} ${a.direction?.toUpperCase() || ''}</span>
+      <span class="watch-reason">${esc(a.reason_pt || '')}</span>
+    </div>
+  `).join('');
+
+  container.innerHTML = `
+    <div class="analysis-section">
+      <h3>Sentimento Geral</h3>
+      <span class="sentiment-badge sentiment-${analysis.overall_sentiment}" style="font-size:0.85rem;padding:4px 14px;">
+        ${SENTIMENT_LABEL[analysis.overall_sentiment] || analysis.overall_sentiment}
+      </span>
+      <span class="risk-indicator risk-${risk}" style="margin-left:12px;">
+        Risco: ${RISK_LABEL[risk] || risk}
+      </span>
+    </div>
+    <div class="analysis-section">
+      <h3>Resumo do Mercado</h3>
+      <div class="analysis-text">${esc(analysis.summary_pt || '')}</div>
+    </div>
+    <div class="analysis-section">
+      <h3>Ativos para Observar</h3>
+      <div class="watch-list">${watchHtml || '<div class="no-data-msg">Nenhum ativo listado</div>'}</div>
+    </div>
+  `;
+}
+
+function esc(s) {
+  if (!s) return '';
+  const el = document.createElement('span');
+  el.textContent = s;
+  return el.innerHTML;
+}
+
+async function loadMarketNews() {
+  try {
+    const resp = await fetch('market-data.json?t=' + Date.now());
+    if (!resp.ok) return;
+    const data = await resp.json();
+    const ts = formatTimestamp(data.timestamp);
+    document.getElementById('news-timestamp').textContent = ts;
+    document.getElementById('tweets-timestamp').textContent = ts;
+    document.getElementById('analysis-timestamp').textContent = ts;
+    renderNews(data.news);
+    renderTweets(data.tweets);
+    renderAnalysis(data.analysis);
+  } catch (e) {
+    console.log('market-data.json nao disponivel ainda:', e.message);
+  }
+}
+
+// Load news data on startup and refresh every 5 minutes
+loadMarketNews();
+setInterval(loadMarketNews, 300000);
+</script>
+</body>
+</html>
