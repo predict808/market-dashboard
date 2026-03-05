@@ -1,66 +1,80 @@
 {
-  "timestamp": "2026-03-05T05:48:56Z",
+  "timestamp": "2026-03-05T06:12:07Z",
   "news": [
     {
-      "title": "Federal Reserve Signals Pause on Rate Cuts as Inflation Remains Sticky",
+      "title": "Fed Holds Rates Steady at 4.75% as Inflation Remains Above Target",
       "source": "Market Analysis",
-      "summary": "O Fed indica uma pausa nas reduções de juros devido à persistência da inflação acima das metas. As perspectivas de política monetária mais restritiva afetam negativamente os mercados de renda variável globalmente.",
+      "summary": "O Banco Federal mantém as taxas de juros em 4,75% e sinaliza uma postura restritiva contínua enquanto a inflação permanece acima das metas de longo prazo. Investidores reprecificam expectativas de cortes de juros para a segunda metade de 2026.",
       "impact": "high",
       "sentiment": "bearish",
       "affected_assets": [
         "S&P 500",
-        "Nasdaq-100",
-        "USD/EUR",
-        "USD/GBP"
+        "Nasdaq",
+        "US 10Y Treasury",
+        "USD Index"
       ]
     },
     {
-      "title": "Trade Tensions Escalate: New Tariff Proposals Target Tech and Manufacturing Sectors",
+      "title": "Employment Report Shows Cooling Labor Market Growth Below Expectations",
       "source": "Market Analysis",
-      "summary": "Novas propostas tarifárias impactam setores de tecnologia e manufatura, aumentando custos de produção. Perspectivas recessivas emergem para empresas multinacionais dependentes de comércio internacional.",
+      "summary": "Dados de emprego revelam crescimento abaixo das expectativas com taxa de desemprego subindo para 4,3%. O mercado de trabalho mais fraco reforça pressão sobre o Fed para eventual flexibilização monetária.",
+      "impact": "high",
+      "sentiment": "neutral",
+      "affected_assets": [
+        "S&P 500",
+        "Treasury Bonds",
+        "USD"
+      ]
+    },
+    {
+      "title": "Trump Administration Announces 25% Tariffs on Chinese Imports Starting March 15",
+      "source": "Market Analysis",
+      "summary": "Novas tarifas de 25% sobre importações chinesas são anunciadas para entrar em vigor no dia 15 de março, intensificando tensões comerciais. Setores de tecnologia e manufatura enfrentam pressão significativa sobre custos operacionais.",
       "impact": "high",
       "sentiment": "bearish",
       "affected_assets": [
         "Nasdaq",
-        "semiconductores",
-        "USD/CNY"
+        "Technology sector",
+        "USD/CNY",
+        "Supply Chain ETFs"
       ]
     },
     {
-      "title": "Earnings Season Mixed: Tech Giants Report, Some Miss Revenue Targets",
+      "title": "European Central Bank Signals Rate Cuts Ahead as Eurozone Inflation Moderates",
       "source": "Market Analysis",
-      "summary": "Resultado da temporada de ganhos mostra divergência entre mega-cap tech e empresas de média capitalização. Margens comprimidas refletem pressões inflacionárias e custos de pesquisa em IA.",
+      "summary": "O Banco Central Europeu sinaliza possíveis cortes de juros enquanto a inflação da zona do euro modera para 2,1%. Divergência de política entre Fed e BCE pressiona o par EUR/USD para novos patamares.",
       "impact": "high",
-      "sentiment": "neutral",
+      "sentiment": "bearish",
       "affected_assets": [
-        "FAANG",
-        "Nasdaq",
-        "S&P 500"
+        "EUR/USD",
+        "European indices",
+        "US dollar"
       ]
     },
     {
-      "title": "Geopolitical Risk Premium Rises: Energy Markets React to Regional Tensions",
+      "title": "Bitcoin Breaks $70,000 as Institutional Adoption Accelerates and Regulatory Clarity Improves",
       "source": "Market Analysis",
-      "summary": "Aumentos no prêmio de risco geopolítico levam a pressão alista nos preços de petróleo e gás. Dólar se fortalece como moeda de refúgio em contexto de incerteza global.",
+      "summary": "Bitcoin sobe acima de $70.000 impulsionado por maior adoção institucional e clareza regulatória positiva em múltiplas jurisdições. Ethereum e Solana acompanham com ganhos significativos em sentimento de risco elevado.",
+      "impact": "medium",
+      "sentiment": "bullish",
+      "affected_assets": [
+        "BTC",
+        "ETH",
+        "SOL",
+        "Crypto markets"
+      ]
+    },
+    {
+      "title": "Oil Prices Rally on Geopolitical Tensions in the Middle East and Supply Concerns",
+      "source": "Market Analysis",
+      "summary": "Preços de petróleo sobem 8% após escalada de tensões geopolíticas no Oriente Médio e preocupações com interrupção de suprimentos. Dólar se beneficia como moeda de refúgio com commodities reagindo à incerteza.",
       "impact": "high",
       "sentiment": "bearish",
       "affected_assets": [
         "Crude Oil",
         "Natural Gas",
         "USD",
-        "EUR/USD"
-      ]
-    },
-    {
-      "title": "Bitcoin and Ethereum Consolidate After Rally: Market Debate on Regulation",
-      "source": "Market Analysis",
-      "summary": "Criptomoedasmostraram consolidação após ganhos anteriores, com debate regulatório criando incerteza. Aprovação de ETFs de Bitcoin coloca pressão na estrutura de taxas.",
-      "impact": "medium",
-      "sentiment": "neutral",
-      "affected_assets": [
-        "BTC",
-        "ETH",
-        "SOL"
+        "Energy stocks"
       ]
     }
   ],
@@ -68,71 +82,81 @@
     {
       "author": "Donald Trump",
       "handle": "@realDonaldTrump",
-      "content": "America First policies will protect our workers. New tariffs on foreign competitors are essential for a strong dollar and manufacturing renaissance.",
-      "summary_pt": "Trump reafirma posição protecionista com foco em tarifas para proteger trabalhadores americanos e impulsionar manufatura doméstica.",
+      "content": "China has stolen our jobs for decades. These 25% tariffs are necessary to bring manufacturing back to America. American workers will be winners!",
+      "summary_pt": "Trump reafirma sua posição sobre tarifas contra a China como medida essential para trazer manufatura de volta aos EUA e proteger trabalhadores americanos.",
       "impact": "high",
-      "sentiment": "bullish",
+      "sentiment": "bearish",
       "affected_assets": [
         "USD",
-        "Manufacturing ETFs",
-        "S&P 500"
+        "US indices",
+        "Chinese markets"
+      ]
+    },
+    {
+      "author": "Jerome Powell",
+      "handle": "@federalreserve",
+      "content": "The Fed remains focused on price stability and maximum employment. Current restrictive policy is appropriate given persistent inflation pressures.",
+      "summary_pt": "Powell mantém tom firme sobre a necessidade de política monetária restritiva para controlar inflação persistente, sinalizando cautela sobre cortes futuros.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "US Treasury bonds",
+        "S&P 500",
+        "Equity markets"
       ]
     },
     {
       "author": "Elon Musk",
       "handle": "@elonmusk",
-      "content": "Tesla's production efficiency and AI advancements will reshape the auto industry. Skeptics will be surprised by our 2026 deliveries.",
-      "summary_pt": "Musk expressa confiança na eficiência produtiva da Tesla e avanços em IA, indicando perspectivas positivas para 2026.",
+      "content": "Tesla's Q1 deliveries tracking well. Giga Berlin ramping beautifully. Energy business growing exponentially. AI is the future—Grok 3 training now.",
+      "summary_pt": "Musk expressa otimismo com entrega de veículos, ramp de produção e crescimento exponencial do negócio de energia, mantendo postura bullish sobre a Tesla.",
       "impact": "medium",
       "sentiment": "bullish",
       "affected_assets": [
         "TSLA",
-        "Electric Vehicles",
-        "AI sector"
-      ]
-    },
-    {
-      "author": "Jerome Powell",
-      "handle": "@federalreserve_official",
-      "content": "The Fed remains committed to price stability. Data-dependent approach means we monitor inflation trends closely before adjusting rates.",
-      "summary_pt": "Powell reafirma compromisso do Fed com estabilidade de preços e abordagem baseada em dados para decisões futuras de juros.",
-      "impact": "high",
-      "sentiment": "neutral",
-      "affected_assets": [
-        "US 10Y Treasury",
-        "USD Index",
-        "S&P 500"
+        "EV sector",
+        "Energy storage"
       ]
     }
   ],
   "analysis": {
     "overall_sentiment": "bearish",
-    "summary_pt": "O mercado global enfrenta um ambiente de transição desafiador em março de 2026, caracterizado por inflação persistente que impede cortes de juros do Fed e tensões comerciais crescentes que aumentam incerteza. A combinação de política monetária restritiva com riscos geopolíticos elevados cria pressão sobre múltiplas classes de ativos, particularmente tecnologia, manufatura e moedas emergentes. Os índices americanos consolidam após ganhos anteriores, com investidores reprecificando as expectativas de crescimento para baixo diante dos headwinds macroeconômicos.\n\nOs criptotivos experimentam consolidação após correção, refletindo cautela regulatória e concorrência com retornos mais seguros em títulos soberanos. O dólar permanece fortalecido como moeda de refúgio, enquanto moedas emergentes sofrem pressão, particularmente o real brasileiro e o euro. O ouro se beneficia do aumento de incerteza e prêmios de risco elevados.\n\nPerspectivas para as próximas semanas sugerem continuidade de volatilidade, com atenção focada em dados de inflação, pronunciamentos adicionais do Fed, e resoluções (ou escalação) de tensões comerciais. Empresas com exposição significativa a comércio internacional e aquelas dependentes de financiamento barato enfrentam ventos desfavoráveis.",
+    "summary_pt": "O cenário macroeconômico de março de 2026 permanece desafiador com o Fed mantendo taxas de juros em níveis restritivos enquanto a inflação persiste acima de suas metas. A combinação de uma política monetária apertada nos EUA com sinais de flexibilização na Europa cria divergências significativas nas políticas globais, pressurando pares cambiais como EUR/USD. Simultaneamente, a escalada de tensões comerciais entre EUA e China, especialmente as tarifas anunciadas de 25%, introduz volatilidade adicional nos mercados de ações e cadeia de suprimentos globais.\n\nOs mercados de renda variável enfrentam pressão de múltiplas valorizações em um ambiente de juros elevados, enquanto o mercado de trabalho mais fraco começa a indicar sinais de desaceleração econômica. Setores ligados à tecnologia e manufatura são particularmente vulneráveis às tarifas propostas. Por outro lado, criptomoedasShowtime sinais de força com Bitcoin ultrapassando $70.000, sugerindo que certos investidores estão buscando proteção além de ativos tradicionais. Commodities como ouro e petróleo beneficiam-se do aumento de risco geopolítico no Oriente Médio e da demanda por refúgio.\n\nOs investidores devem monitorar de perto os dados de inflação CPI dos EUA, pronunciamentos adicionais do Fed sobre o trajetória de juros, e negociações relacionadas às tarifas. O divergente entre ciclos de política nos EUA e na Europa mantém volatilidade no mercado de câmbio, enquanto a incerteza geopolítica e comercial sugere um ambiente de risco elevado para ações de múltiplas capitalização nos próximos meses.",
     "assets_to_watch": [
       {
         "asset": "S&P 500",
         "direction": "down",
-        "reason_pt": "Pressão de múltiplas valorizações em contexto de juros elevados e crescimento econômico desacelerado."
+        "reason_pt": "Pressão de juros elevados, multiplas de valização reduzidas e preocupações com impacto de tarifas sobre lucros corporativos."
       },
       {
-        "asset": "USD/EUR",
-        "direction": "up",
-        "reason_pt": "Diferencial de juros mantém dólar forte enquanto ECB aguarda sinais de desinflação na zona do euro."
+        "asset": "Nasdaq-100",
+        "direction": "down",
+        "reason_pt": "Setor de tecnologia particularmente vulnerável a tarifas e custos de pesquisa em IA elevados comprimem margens."
+      },
+      {
+        "asset": "EUR/USD",
+        "direction": "down",
+        "reason_pt": "Divergência de política monetária com Fed restritivo e BCE preparado para cortes leva dólar mais forte e euro mais fraco."
       },
       {
         "asset": "Bitcoin (BTC)",
-        "direction": "sideways",
-        "reason_pt": "Consolidação entre suporte e resistência reflete incerteza regulatória e competição com títulos de renda fixa atrativa."
+        "direction": "up",
+        "reason_pt": "Demanda como proteção contra política monetária tradicional e incerteza macro impulsiona adoção institucional e preços mais altos."
       },
       {
         "asset": "Ouro",
         "direction": "up",
-        "reason_pt": "Demanda como ativo de proteção aumenta com prêmios de risco geopolítico elevados e incerteza macroeconômica."
+        "reason_pt": "Aumento de prêmios de risco geopolítico, incerteza comercial e demanda por ativos de refúgio sustentam preços elevados."
       },
       {
         "asset": "BRL/USD",
         "direction": "down",
-        "reason_pt": "Real brasileiro sob pressão com fluxo de capitais para ativos de refúgio e juros reais comprimidos por pressões inflacionárias."
+        "reason_pt": "Real brasileiro sob pressão com fluxos para moedas de refúgio, juros reais negativos e incerteza fiscal."
+      },
+      {
+        "asset": "Crude Oil",
+        "direction": "up",
+        "reason_pt": "Tensões geopolíticas no Oriente Médio combinadas com preocupações de suprimento mantêm pressão alista nos preços."
       }
     ],
     "risk_level": "high"
