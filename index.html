@@ -174,19 +174,6 @@
     font-size: 0.7rem; color: #3f3f46; text-align: center;
   }
   .news-footer-meta span { color: #52525b; font-weight: 500; }
-  .news-pagination {
-    display: flex; align-items: center; justify-content: center; gap: 6px;
-    margin-top: 18px; padding-top: 14px; border-top: 1px solid #27272a;
-  }
-  .news-page-btn {
-    background: #18181b; border: 1px solid #27272a; color: #a1a1aa;
-    padding: 6px 12px; border-radius: 8px; font-size: 0.75rem; cursor: pointer;
-    transition: all 0.15s; font-weight: 500;
-  }
-  .news-page-btn:hover { border-color: #a78bfa; color: #e4e4e7; }
-  .news-page-btn.active { background: #a78bfa; border-color: #a78bfa; color: #0f0f13; font-weight: 700; }
-  .news-page-btn:disabled { opacity: 0.3; cursor: default; }
-  .news-page-info { color: #52525b; font-size: 0.7rem; margin: 0 8px; }
   .news-list { display: flex; flex-direction: column; gap: 14px; }
   .news-card, .tweet-card {
     background: #18181b; border: 1px solid #27272a;
@@ -543,7 +530,6 @@
   <div class="news-list" id="news-list">
     <div class="no-data-msg">Nenhuma notícia carregada. Execute o script de busca ou aguarde a próxima atualização automática.</div>
   </div>
-  <div id="news-pagination"></div>
   <div class="news-footer-meta">
     Última atualização: <span id="news-timestamp">--</span>
   </div>
@@ -1254,7 +1240,6 @@ function formatTimestamp(ts) {
   } catch { return ts; }
 }
 
-const FINNHUB_KEY = 'd6h7sohr01qnjncnm6e0d6h7sohr01qnjncnm6eg';
 const clockIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
 
 function renderNewsCard(n) {
@@ -1292,8 +1277,6 @@ function renderNewsCard(n) {
   </div>`;
 }
 
-const NEWS_PER_PAGE = 10;
-let currentNewsPage = 0;
 let allNewsSorted = [];
 
 function renderNews(news) {
@@ -1303,9 +1286,9 @@ function renderNews(news) {
     const tb = b.datetime || (b.published_at ? new Date(b.published_at).getTime() / 1000 : 0);
     return tb - ta;
   });
-  currentNewsPage = 0;
   renderNewsStats();
-  renderNewsPage();
+  const container = document.getElementById('news-list');
+  container.innerHTML = allNewsSorted.map(renderNewsCard).join('');
 }
 
 function renderNewsStats() {
@@ -1313,11 +1296,11 @@ function renderNewsStats() {
   const bullish = allNewsSorted.filter(n => n.sentiment === 'bullish').length;
   const bearish = allNewsSorted.filter(n => n.sentiment === 'bearish').length;
   const neutral = allNewsSorted.filter(n => n.sentiment === 'neutral').length;
-  const unclassified = total - bullish - bearish - neutral;
+  const base = total || 1;
+  const pctBull = Math.round(bullish/base*100);
+  const pctBear = Math.round(bearish/base*100);
+  const pctNeut = Math.round(neutral/base*100);
   const statsEl = document.getElementById('news-stats');
-  const pctBull = total ? Math.round(bullish/total*100) : 0;
-  const pctBear = total ? Math.round(bearish/total*100) : 0;
-  const pctNeut = total ? Math.round((neutral+unclassified)/total*100) : 0;
   statsEl.innerHTML = `
     <div class="news-stat-card">
       <div class="news-stat-count" style="color:#4ade80">${bullish}<span style="font-size:0.75rem;color:#52525b;font-weight:500">/${total}</span></div>
@@ -1330,63 +1313,11 @@ function renderNewsStats() {
       <div class="news-stat-bar" style="background:#f87171;width:${pctBear}%"></div>
     </div>
     <div class="news-stat-card">
-      <div class="news-stat-count" style="color:#a1a1aa">${neutral + unclassified}<span style="font-size:0.75rem;color:#52525b;font-weight:500">/${total}</span></div>
+      <div class="news-stat-count" style="color:#a1a1aa">${neutral}<span style="font-size:0.75rem;color:#52525b;font-weight:500">/${total}</span></div>
       <div class="news-stat-label">Neutras (${pctNeut}%)</div>
       <div class="news-stat-bar" style="background:#a1a1aa;width:${pctNeut}%"></div>
     </div>`;
 }
-
-function renderNewsPage() {
-  const container = document.getElementById('news-list');
-  const totalPages = Math.ceil(allNewsSorted.length / NEWS_PER_PAGE);
-  const start = currentNewsPage * NEWS_PER_PAGE;
-  const page = allNewsSorted.slice(start, start + NEWS_PER_PAGE);
-  container.innerHTML = page.map(renderNewsCard).join('');
-
-  // Pagination controls
-  const pagDiv = document.getElementById('news-pagination');
-  if (totalPages <= 1) { pagDiv.innerHTML = ''; return; }
-  let html = '<div class="news-pagination">';
-  html += `<button class="news-page-btn" onclick="newsGoPage(${currentNewsPage - 1})" ${currentNewsPage === 0 ? 'disabled' : ''}>&#8249;</button>`;
-  for (let i = 0; i < totalPages; i++) {
-    html += `<button class="news-page-btn ${i === currentNewsPage ? 'active' : ''}" onclick="newsGoPage(${i})">${i + 1}</button>`;
-  }
-  html += `<button class="news-page-btn" onclick="newsGoPage(${currentNewsPage + 1})" ${currentNewsPage === totalPages - 1 ? 'disabled' : ''}>&#8250;</button>`;
-  html += `<span class="news-page-info">${start + 1}-${Math.min(start + NEWS_PER_PAGE, allNewsSorted.length)} de ${allNewsSorted.length}</span>`;
-  html += '</div>';
-  pagDiv.innerHTML = html;
-}
-
-function newsGoPage(p) {
-  const totalPages = Math.ceil(allNewsSorted.length / NEWS_PER_PAGE);
-  if (p < 0 || p >= totalPages) return;
-  currentNewsPage = p;
-  renderNewsPage();
-  document.getElementById('panel-news').scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-// Classification index: by url and by headline
-let classifiedByUrl = {};
-let classifiedByHeadline = {};
-
-async function fetchFinnhubNews() {
-  try {
-    const data = await fetchJSON(`https://finnhub.io/api/v1/news?category=general&token=${FINNHUB_KEY}`);
-    if (!data || !data.length) return;
-    // Merge classification data if available
-    const enriched = data.map(n => {
-      const cls = classifiedByUrl[n.url] || classifiedByHeadline[(n.headline || '').trim().toLowerCase()];
-      if (cls) return { ...n, impact: cls.impact, sentiment: cls.sentiment, affected_assets: cls.affected_assets, summary: cls.summary_pt || n.summary };
-      return n;
-    });
-    renderNews(enriched);
-    const latest = Math.max(...data.map(n => n.datetime || 0));
-    if (latest) document.getElementById('news-timestamp').textContent = formatTimestamp(new Date(latest * 1000).toISOString());
-  } catch (e) { console.error('Finnhub news error:', e); }
-}
-
-fetchFinnhubNews();
-setInterval(fetchFinnhubNews, 300000);
 
 function renderTweets(tweets) {
   if (!tweets || !tweets.length) return;
@@ -1509,18 +1440,15 @@ async function loadMarketNews() {
     const ts = formatTimestamp(data.timestamp);
     document.getElementById('analysis-timestamp').textContent = ts;
 
-    // Build classification index from AI-classified news
+    // Render classified news directly
     if (data.news && data.news.length) {
-      classifiedByUrl = {};
-      classifiedByHeadline = {};
-      for (const n of data.news) {
-        const entry = { impact: n.impact, sentiment: n.sentiment, affected_assets: n.affected_assets || [], summary_pt: n.summary_pt || '' };
-        if (n.url) classifiedByUrl[n.url] = entry;
-        const key = (n.headline || '').trim().toLowerCase();
-        if (key) classifiedByHeadline[key] = entry;
-      }
-      // Re-render Finnhub news with classifications
-      fetchFinnhubNews();
+      const mapped = data.news.map(n => ({
+        ...n,
+        summary: n.summary_pt || n.summary || '',
+        headline: n.headline || n.title || ''
+      }));
+      renderNews(mapped);
+      document.getElementById('news-timestamp').textContent = ts;
     }
 
     // Tweets tab: only render if data has tweets (legacy support)

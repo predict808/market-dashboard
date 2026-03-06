@@ -1,83 +1,9 @@
 {
-  "timestamp": "2026-03-05T12:46:00Z",
+  "timestamp": "2026-03-06T02:07:42Z",
   "news": [
     {
-      "id": 0,
-      "headline": "House rejects war powers resolution to rein in Trump on Iran",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/03/05/house-iran-rejects-war-powers-resolution-trump.html",
-      "image": "https://image.cnbcfm.com/api/v1/image/108273167-17725814402026-03-03t234320z_1957743287_rc2bxja1isg5_rtrmadp_0_iran-crisis-usa.jpeg?v=1772581461&w=1920&h=1080",
-      "datetime": 1772747937,
-      "summary_pt": "O Senado rejeitou uma resolução sobre poderes de guerra, permitindo que o Presidente Trump prossiga com operações militares adicionais contra o Irã.",
-      "impact": "high",
-      "sentiment": "bearish",
-      "affected_assets": [
-        "SPY",
-        "QQQ",
-        "DXY",
-        "USO",
-        "CL"
-      ]
-    },
-    {
-      "id": 1,
-      "headline": "US House rejects war powers resolution, backs Trump on Iran war - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPRlhObXNGVVdIaHc3ajI2a1dtaEozaXA5THI4TWdiM1JSclV3M3hlSVBmYXJhbDJjNmZ5blJaY0hzeWFEbDdobnF6aGxBYk9qeUxHWnd3dHMxVFZ1cmIyd0tZOXJ3OU50MV92bjViR3lsRVRSQjNFSnMwOENJUVM4cmswdnBzUC1lc3Z5T0tJdEYyV0NMa3VqTXg5YUd1TDNrSU1xQjIxRQ?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "datetime": 1772747385,
-      "summary_pt": "A Câmara dos Representantes rejeita moção de poderes de guerra, apoiando a continuação das ações militares de Trump contra o Irã.",
-      "impact": "high",
-      "sentiment": "bearish",
-      "affected_assets": [
-        "SPY",
-        "QQQ",
-        "USO",
-        "CL",
-        "VIX"
-      ]
-    },
-    {
-      "id": 2,
-      "headline": "Noem firing doesn't break DHS funding impasse, Democrats say",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/03/05/noem-firing-doesnt-break-dhs-funding-impasse-democrats-say.html",
-      "image": "https://image.cnbcfm.com/api/v1/image/108273810-17726554392026-03-04t162235z_1266368553_rc2rxja4hkse_rtrmadp_0_usa-congress-noem.jpeg?v=1772655478&w=1920&h=1080",
-      "datetime": 1772745218,
-      "summary_pt": "A demissão da Secretária de Segurança Interna Kristi Noem por Trump não resolve o impasse de financiamento do DHS em meio a um encerramento contínuo.",
-      "impact": "medium",
-      "sentiment": "neutral",
-      "affected_assets": [
-        "SPY",
-        "IYK",
-        "XLV"
-      ]
-    },
-    {
-      "id": 3,
-      "headline": "China in talks with Iran to allow safe oil and gas passage through Hormuz, sources say - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPZWUyRUZqTXJBV1BybmpoNDFEb0hNQW9xUHpMRUR3YlJmMTBObUswWEdSMDR2N0xfMUdkcmppejFyLS1zNGFwYTBuZjZ0LTh0U3M3aHkxSzJnTGZoZnhTLU9LcWJlaVMwbUQ1VXAtQThrSVNVRl9ld2NOWUJHRG0wYm1RczRVVW1zWFBpbDJHakNiRG5pLXVuQU9HczIxUzVzWHVVdmlNeEp5TVJIYUdrVE1rTEk0SDlHSm1XbmpLZjZWNXhpbnc?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "datetime": 1772741195,
-      "summary_pt": "China em negociações com o Irã para permitir passagem segura de petróleo e gás através do Estreito de Hormuz, indicando alinhamento geopolítico.",
-      "impact": "medium",
-      "sentiment": "bearish",
-      "affected_assets": [
-        "USO",
-        "CL",
-        "Brent",
-        "XLE"
-      ]
-    },
-    {
-      "id": 4,
-      "headline": "Nvidia shares fall on report that Trump is seeking more control of AI chip exports",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/03/05/nvidia-slides-on-report-that-trump-wants-to-make-us-ai-gatekeeper.html",
-      "image": "https://image.cnbcfm.com/api/v1/image/108254809-1768998267409-gettyimages-2256812762-AFP_93GN3UY.jpeg?v=1768998291&w=1920&h=1080",
-      "datetime": 1772738742,
-      "summary_pt": "Ações da Nvidia caem após relato de que Trump busca maior controle sobre exportações de chips de IA dos EUA, criando incerteza regulatória.",
+      "id": 9,
+      "summary_pt": "Ações da Nvidia caem após relato de que Trump busca maior controle sobre exportações de chips de IA dos EUA, gerando incerteza regulatória significativa para o setor de tecnologia.",
       "impact": "high",
       "sentiment": "bearish",
       "affected_assets": [
@@ -85,218 +11,292 @@
         "QQQ",
         "SMH",
         "SOXX"
-      ]
+      ],
+      "headline": "Nvidia shares fall on report that Trump is seeking more control of AI chip exports",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/03/05/nvidia-slides-on-report-that-trump-wants-to-make-us-ai-gatekeeper.html",
+      "image": "https://image.cnbcfm.com/api/v1/image/108254809-1768998267409-gettyimages-2256812762-AFP_93GN3UY.jpeg?v=1768998291&w=1920&h=1080",
+      "datetime": 1772738742
     },
     {
-      "id": 5,
-      "headline": "Iran seeking to escalate conflict, EU's Kallas says - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPVTlzMkVOUy1MdFV4YTd6WURVVjFISXdaUmRvQ2s5NFRnbDduUU55QzZnR2dhaEZIWWVvUWFaeTNIcUlOaUJ5SmtCRDRKWkFXRTU0OTE3bV9QWHh5X2Z3cFBfellFRG5PdlpyZURld3M4bnhJUHU1T2E1Rmt3WkY1UGIzbkw1Qk1rTnB5RWU4ZENrRm5Zak1uckxXTHpmMmZwUkxUWEJn?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "datetime": 1772738103,
-      "summary_pt": "A chefe da política externa da UE, Kallas, afirma que o Irã está buscando escalar o conflito, sinalizando maior tensão regional.",
+      "id": 11,
+      "summary_pt": "Trump declara estar disposto a tolerar aumentos de preços de gasolina durante operações no Irã, sinalizando prioridade geopolítica sobre estabilidade econômica doméstica e pressão inflacionária.",
       "impact": "high",
-      "sentiment": "bearish",
-      "affected_assets": [
-        "VIX",
-        "USO",
-        "CL",
-        "GLD",
-        "SPY"
-      ]
-    },
-    {
-      "id": 6,
-      "headline": "Exclusive: Trump on rising gas prices during Iran operation: 'If they rise, they rise' - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPcG5QWHM0LTFkT28zMTFUSnEzcGhyclhYQ01teUx2NXZSTUNlTmpJUE1MTjNWOTk2ZjlDTkp3ek5vQ0VwOHVhWmtiM0RBNTlobkVnZjRBMmJDZHFhS3VlTl9odjk4V01EekMwWVpNUUhqZmcxS1FuSlhjblpkblRaVFEtTVVzOENyVkdqZ2p3UXVwVUFoMmhZNWtmVUpDSndIOEgzWTVHTGg5VkVPMVJabVM4eDdIY1BEaXJSWQ?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "datetime": 1772737497,
-      "summary_pt": "Trump declara estar disposto a tolerar aumentos de preços de gasolina durante operação no Irã, sinalizando prioridade geopolítica sobre questões econômicas domésticas.",
-      "impact": "medium",
       "sentiment": "bearish",
       "affected_assets": [
         "USO",
         "CL",
         "XLE",
         "SPY"
-      ]
-    },
-    {
-      "id": 7,
-      "headline": "NATO increases missile defence posture after Turkey incident - Reuters",
+      ],
+      "headline": "Exclusive: Trump on rising gas prices during Iran operation: 'If they rise, they rise' - Reuters",
       "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPLXduSW02ZVpKUmxzLWRCVEJ2QWNtbkttcUxfWlZFUm5yby1qcDRQYU5yVEVTUlN5dTJwN09JR3VmYjc1bENEZW9IYk05VGJJcjdmeFdLSzdRaUZzOXU0bGIxQWFaNmJWdGI2UHZQakd5MnBtdE9rQUxUci1tbUFTZUwzU2puZ0kzWEZrU1NqVkdxWXIwS3FpcXhkN3hOYWZkU1JnNg?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPcG5QWHM0LTFkT28zMTFUSnEzcGhyclhYQ01teUx2NXZSTUNlTmpJUE1MTjNWOTk2ZjlDTkp3ek5vQ0VwOHVhWmtiM0RBNTlobkVnZjRBMmJDZHFhS3VlTl9odjk4V01EekMwWVpNUUhqZmcxS1FuSlhjblpkblRaVFEtTVVzOENyVkdqZ2p3UXVwVUFoMmhZNWtmVUpDSndIOEgzWTVHTGg5VkVPMVJabVM4eDdIY1BEaXJSWQ?oc=5",
       "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "datetime": 1772736785,
-      "summary_pt": "A OTAN aumenta sua postura de defesa de mísseis após incidente na Turquia, refletindo escalação das tensões regionais.",
-      "impact": "medium",
-      "sentiment": "neutral",
-      "affected_assets": [
-        "ITA",
-        "LMT",
-        "RTX",
-        "NOC"
-      ]
+      "datetime": 1772737497
     },
     {
-      "id": 8,
-      "headline": "US, Qatar discuss acquiring Ukrainian drones to down Iran's Shaheds, source says - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQOFZJbHYtUldySVZjQi15MDFPcE1ZQWdZYzB4VWw1aDdDeEdZemRIM0xSeEtIV3NMeXBCeTlXMV9veUdZWjRJcWt2TXNDUC04WUNKZWhUTTJYTW9nbXJIdFZ5ZG9aMlQ3SzJsNnJZMTVDSGhOU01JMHg1WFFZRGJIS1dQcHV0NFJESlVLakZROG5OdWdYa0IyemdmY0k2SnRCYUlPUWpBZDZrNF9HeE9ndm54bEVReVpwRzZvTE4zNktsTkhhMUxSc05zZm5vVUwwNVVN?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "datetime": 1772736607,
-      "summary_pt": "EUA e Qatar discutem aquisição de drones ucranianos para neutralizar mísseis iranianos Shaheds, expandindo coalizão de defesa aérea.",
-      "impact": "medium",
-      "sentiment": "neutral",
-      "affected_assets": [
-        "LMT",
-        "RTX",
-        "NOC",
-        "ITA"
-      ]
-    },
-    {
-      "id": 9,
-      "headline": "Exclusive: Indian refiners buying prompt Russian oil as Iran war hits supplies, sources say - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPV2xsNFhJWVN2Rnpjb2VXNUIwMXA5TDJYeUVDaFh1bVVMRFdHZWRNemdPRG1IeXh6MEdqazR0MVhrTnQ1MUFicDdZbzFxUERNN3ltam1IYldpam5aeXExZmVpMTVSTWNfSFNGb2xfRGhLNTBTdUVGMGNUWk9kX3k3NlhFLW93OHFRcEFJSTE2V3NCZjZycUxfeUhlempva3JXOUJadmtVLUhUYlcyenB6akdIRDAVZjhkQ1UwWWFVcVI0NlRGR25Z?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "datetime": 1772733753,
-      "summary_pt": "Refinarias indianas compram petróleo russo imediato enquanto guerra com Irã reduz suprimentos, reorientando fluxos globais de energia.",
-      "impact": "medium",
-      "sentiment": "bearish",
-      "affected_assets": [
-        "USO",
-        "CL",
-        "Brent",
-        "XLE"
-      ]
-    },
-    {
-      "id": 10,
-      "headline": "Trump renews Netanyahu pardon call, saying only Iran should be troubling him - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPcEJMMThNbHFlb3BOSkhiR0pUWWtjQ2kzZnRaempoT1AxeGdoUldKckFKUF9IM2czbnFMQVkyQ0Y0b1JlNEtpblI3TTEwVm55aEI4ZXQ5bnUzNENDLVU2SHlVNXhKRTl4RTNDMkRCVzR4d21yUVNTc05lNkN0RXBtZUEzVl9oRHBna1NuLXhOUlp2VElFenlSdjRyYkx4b01JZVlXcDB6WXNCS2VWY2FQZnlWTURoM3BORTFxRVQ5OTNpWFZ3NGxrVw?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "datetime": 1772733099,
-      "summary_pt": "Trump reafirma pedido de indulto para Netanyahu, argumentando que apenas o Irã deveria ser preocupação dele, refletindo alinhamento estratégico.",
-      "impact": "low",
-      "sentiment": "neutral",
-      "affected_assets": [
-        "SPY"
-      ]
-    },
-    {
-      "id": 11,
-      "headline": "In a few days it will be harder for Iran to disrupt shipping, Israeli envoy says - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNRXF6bTRKeUJNb2s4dVJGeFFmUDBTclYxM01YdkZKSWp6MjR2eUFBUFBja3ltQWc5SU1ISUx6djE0RjNoak9tbnlFR2x3VXk2TzQ2MGlSWjZFSHY5Tk5mU1dtYkhqdVdaUEE4cTdnQ0tzSGw3cGxrUDBBenVJdDNIQXFrZ3ZvWm5qQmRsX3FqWExhS1YycFZidlpYazVlVnp1bjZCVTNNUzVXSGZwdFFXNzB4d0d4SU5Jc2FVcmRR?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "datetime": 1772732959,
-      "summary_pt": "Enviado israelense afirma que em poucos dias será mais difícil para o Irã interferir no tráfego marítimo, sugerindo progresso militar iminente.",
-      "impact": "medium",
-      "sentiment": "neutral",
-      "affected_assets": [
-        "USO",
-        "CL",
-        "GC",
-        "ZB"
-      ]
-    },
-    {
-      "id": 12,
-      "headline": "Isolated and under fire: Iran strikes out as Russia and China stand aside - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNRW56dklzOENvM3B0NXd6em8wSWJ6dmNvY2lDM19oSjF0NUNzcVVLQjN4OFQzYTQ5dmxNaU9WQmdaTnRjMGdVWkRXc2NsOGEzdW41QS0zZTd1alhselY3TV9pSTF5UloyMFZqLUxRdkxOOTJyamtkMXNDczdwaDhpSVI3Q3lMWVFRYnlLNDZQYk83WHVqcXc2d2R0TjFuenZPOEZzTHFqTGVsQThSa2FyYndhazhKQQ?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "datetime": 1772731712,
-      "summary_pt": "Irã isolado sob fogo enquanto Rússia e China se afastam, deixando-o sem suporte geopolítico significativo contra coalizão internacional.",
-      "impact": "high",
-      "sentiment": "bearish",
-      "affected_assets": [
-        "VIX",
-        "USO",
-        "CL",
-        "SPY",
-        "DXY"
-      ]
-    },
-    {
-      "id": 13,
-      "headline": "The metric we care most about when Costco reports earnings after the closing bell",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/03/05/the-metric-we-care-most-about-when-costco-reports-earnings-thursday.html",
-      "image": "https://image.cnbcfm.com/api/v1/image/108254607-1768945138416-gettyimages-2223587166-costco2504.jpeg?v=1772728221&w=1920&h=1080",
-      "datetime": 1772731277,
-      "summary_pt": "Análise focada na métrica chave para relatório de ganhos da Costco após o fechamento do mercado, com ênfase em métricas de desempenho críticas.",
-      "impact": "low",
-      "sentiment": "neutral",
-      "affected_assets": [
-        "COST",
-        "XRT"
-      ]
-    },
-    {
-      "id": 14,
-      "headline": "Exclusive: Trump tells Reuters US must have a role in choosing Iran's next leader - Reuters",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNV2ZIYlZxc1VuZ2RmSXBJUjhueTVacXVrdmxUQUNZUE8wSDJLQ0YxOWxLcl9nNmdBX1pkMVNMd3ZZR2tWNVRvejFhUnduVlAweFlfTjN0U1NTR2tUb2xnZkdqdHN1ZzhMSHhwcVlBQ25EYmJxUVFBVlU3S09RLTlBWW5iNlMtYmlyS0RXUTZMOHMtM2hkM2xzRU1oaGpzQ0pEc3lUek9lQ08wM1p0Q2lfdGxsZFMwY2JjRUE?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "datetime": 1772731257,
-      "summary_pt": "Trump afirma que EUA devem ter papel na escolha do próximo líder do Irã, sinalizando ambição de mudança de regime pós-conflito.",
+      "id": 20,
+      "summary_pt": "Trump afirma que os EUA devem ter papel na escolha do próximo líder do Irã, sinalizando ambição de mudança de regime e prolongamento potencial do conflito.",
       "impact": "high",
       "sentiment": "bearish",
       "affected_assets": [
         "VIX",
         "DXY",
         "USO",
-        "CL",
         "GLD"
-      ]
+      ],
+      "headline": "Exclusive: Trump tells Reuters US must have a role in choosing Iran's next leader - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNV2ZIYlZxc1VuZ2RmSXBJUjhueTVacXVrdmxUQUNZUE8wSDJLQ0YxOWxLcl9nNmdBX1pkMVNMd3ZZR2tWNVRvejFhUnduVlAweFlfTjN0U1NTR2tUb2xnZkdqdHN1ZzhMSHhwcVlBQ25EYmJxUVFBVlU3S09RLTlBWW5iNlMtYmlyS0RXUTZMOHMtM2hkM2xzRU1oaGpzQ0pEc3lUek9lQ08wM1p0Q2lfdGxsZFMwY2JjRUE?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772731257
+    },
+    {
+      "id": 25,
+      "summary_pt": "Tráfego de navios-tanques no Estreito de Hormuz chega a paralisação, criando risco crítico de disrupção de suprimentos globais de energia e pressão sobre preços.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "CL",
+        "Brent",
+        "USO",
+        "XLE"
+      ],
+      "headline": "See tanker traffic in the Strait of Hormuz come to a standstill - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPRVB6cVR0N1cyLVlpUmdFUXFFRU1qOUs1cTBOOF9tTm5DNGJhTUZZUU9XLUExTUxWUHBvdGlzdDFrVVRUMFI5bkcwWjV3aUd2a1BKdkpLTG1uU0dBZGsyWHY3S3hsNkw3Nk1wTTFJVEVvM0o5anFzZVFRSGwxMnpIUGVlRFJIRXlYNUlDNlEzMFVFQk1naktOaVF1VkN2cGxCeWYyQ1kyVHFOdkNWVGlSRWs5MVFaM0lTcWVZTDBsSDM5TFluQk1FeXoyOTFKdzQ?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772723100
+    },
+    {
+      "id": 27,
+      "summary_pt": "Iraque, Kuwait e EAU podem reduzir produção de petróleo em resposta à crise do Irã, agravando constrangimentos de oferta global e aumentando preços de energia.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "CL",
+        "Brent",
+        "XLE",
+        "USO"
+      ],
+      "headline": "After Iraq, Kuwait and UAE may be next to cut oil output on Iran crisis, analysts say - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNTEs3WVpwRlRGX2lMdURNOXBKQXNyYlcxV3puQ05hcm5NQ25JRjRQVXF6cUhxOXE5bzR1S21HNVRqeVQ3NlhrMFpDQkRkNFpPTVNCMlRhWTNxbnluU0hYWmVyeHpmMVEwNjNkVl9STTNTaFNnMUFna0JGM3I2WFNnNjFaR2dlWVIzQmlLU0M3ZDdrX0NkNGdBMUpYekxwa0pkM2Ewc0tzR29mY2FDYi1ObE4zQmg1RklTX29jeXZkVU5qNDA?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772720376
+    },
+    {
+      "id": 32,
+      "summary_pt": "Presidente do EBRD averta que conflito no Irã representa risco significativo ao crescimento econômico global, com implicações macroeconômicas amplas.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "SPY",
+        "EWU",
+        "EWG",
+        "SCHF"
+      ],
+      "headline": "Iran conflict a risk to economic growth, EBRD president says - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQMGVhOEY3VFl2ZlFZU1FHaTF3VE9kVDdSYU1YMjgtVE5zcWJ5WDZHOFlydGtBV3ZwUXA4dFRXSFV2eloxbGdVT0NSRzZ5S2k0aE1menZWeUFCZXFIWHd3ZkdFcXg1NFNyOHV4cWxERVVjbDUwMVVUbm9Db2M2NU1TdmtaZHVHSnhMNDJCWkZPblZ1TnFJQWFzbXhZVnFSZWlUR21ybF9GTkNmYkJjOHc?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772717569
+    },
+    {
+      "id": 36,
+      "summary_pt": "Indústria global de viagens de $11,7 trilhões enfrenta disrupção significativa com passageiros presos em prazos de conflito, impactando setor de hospitalidade e transporte.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "IYK",
+        "XLV",
+        "UAL",
+        "DAL"
+      ],
+      "headline": "Iran war threatens $11.7 trillion global travel industry as passengers get caught in crossfire",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/03/05/iran-war-travel-flights-cruise-hotels.html",
+      "image": "https://image.cnbcfm.com/api/v1/image/108273790-1772653707753-gettyimages-2263967601-AFP_99P866E.jpeg?v=1772653797&w=1920&h=1080",
+      "datetime": 1772714947
+    },
+    {
+      "id": 48,
+      "summary_pt": "Goldman Sachs averta que economia global enfrenta testes críticos de inflação e crescimento em meio à escalação do conflito no Irã, criando cenário estagflacionário.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "SPY",
+        "QQQ",
+        "IEF",
+        "TLT"
+      ],
+      "headline": "Global economy faces inflation and growth test amid escalating conflict in Iran - Goldman - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOVTFmdUN2Yjh6Z3djdzlCVXk2Tm0wZ3hnLUN1TndfeDF5dTAxVk9qbHpDVmxjOEhmVTY2Z2tEcDk0WXJOQTc2dXRXeGM0ajMzbFJPYTRfemZta1BXbmZTZWNoYXZxSDFKVVhpOWV6WEc4NU1Xc2c3cWN1V0p0Q2pYeU44czlJX3VzR203RUI0RnlhRWxHaExua1kwX2huUFdfbkc3M2ZXYTlBSkdQYlQ5bUNDWGYtS0dmM0ZhbGJISDVOeTQ?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772704620
+    },
+    {
+      "id": 56,
+      "summary_pt": "Margens de refino da Ásia atingem picos de quase 4 anos devido a disrupção de suprimentos no Hormuz, indicando pressão extrema na cadeia de abastecimento de energia.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "CL",
+        "Brent",
+        "XLE"
+      ],
+      "headline": "Asia refining margins rocket to highest in nearly 4 years on Hormuz supply disruption - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVERodi1WcEVqX2ZaY21KUXNFYTNkeURUQUJKemgwaGY0Nnh3S1VEYTVvVVlYME1aQ21kSUgyU3g2UnJneWV4N3NrM1JYNTZjQ3U0LUpOSE9EVFRzamhxMnk4NEo5Q29odE41bk81LXVyOEVRR1lvZnYxbm1lVzNDcS0zSGxkeFdMQ2U5eE5pSUpsM3oxem5QMERUQTA5ZjVOcFJxVzg3ZTVaZm9WUjRlMnY1a0pfOHFQaXZ6VlBBQmwwOTlvQjM4?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772692920
+    },
+    {
+      "id": 59,
+      "summary_pt": "Supervisor do ECB averta que bancos da zona do euro enfrentam múltiplas ameaças da guerra no Irã, incluindo risco de crédito e volatilidade de mercado.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "EWU",
+        "EWG",
+        "FXE",
+        "VGK"
+      ],
+      "headline": "Exclusive: Euro zone banks face multiple threats from Iran war, ECB supervisor says - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQaHpaRHZfcVhHQ1FpeVpWeE9FNjB1MzRzYktqU3FuUm5zZm1uZER3b0hBMHRTc0RzLWpqXzJnU2tXYnJobmsyQnBMbGJ1aVB4VzZtOFREZ3MtV1U2TGJuS3pMaWdWZWc3NzVKX0t0YlliQmJCTHU3Vkc3OGdoQUZlQ1NmRDRSQkExekJMd3c3eXR5SlF6SW5ydkZORlluVVhlemZHdnptMnE1Wnp0ZmZueE1EM0NQOVREaGNJ?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772690640
+    },
+    {
+      "id": 67,
+      "summary_pt": "Wall Street enfrenta queda inicial enquanto venda de títulos é acionada pela crise no Irã, refletindo ajuste de alocação para ativos de risco.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "SPY",
+        "IEF",
+        "TLT",
+        "AGG"
+      ],
+      "headline": "Wall Street sees early drop as Iran war drives bond selloff - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQbUlBdDVMSU9yNHMtNmRfMzVuejhPdkhWR2dsUDV2YWRmNEhVcTd2RkpRUGRBWnZiVUdxTk1MSzlvTUlnanFYT0MzM0ZpMUs4eWgyMmxGLUR0OWxFaW5hbUJNMWdlYWxQSTlIeFVOX1FNWkhaRWpYeFVMa0ZELVNjMGR2cw?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772677380
+    },
+    {
+      "id": 69,
+      "summary_pt": "Petróleo sobe aproximadamente 5% em preocupações com suprimentos conforme conflito no Irã se amplia, consolidando pressão de alta em commodities de energia.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "CL",
+        "Brent",
+        "USO",
+        "XLE"
+      ],
+      "headline": "Oil settles up around 5% on supply concerns as Iran conflict widens - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQTk9USTU0R1pQbWI3SEVmeXZ3ZkU4d0hINks1WFhaWGJsVC1RTXlCbldHdHVidVc3OXBDZnBiaFpMeFhMTUtLTEdHd0xFRFVqem1CMFNRU1ZnZjZGb3lXY2FIbk52X003YXh2eEU3TlZOVzlTSmw5a3VQc3pEMmU1VUIwTzZlSlpMdzVJb2xBQnJnZw?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772675580
+    },
+    {
+      "id": 71,
+      "summary_pt": "Coreia do Sul averta que crise no Irã pode disruptar suprimento de materiais críticos para fabricação de chips, ameaçando cadeia de suprimentos de semicondutores global.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "NVDA",
+        "TSMC",
+        "SMH",
+        "SOXX"
+      ],
+      "headline": "Iran crisis could disrupt supply of key chipmaking materials, South Korea warns - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNSXFFZnBBUXF5MmhqeEwydWdXeWVLNDdnc21tVXNqQ1JCVmFsblVaeHRmeWJwWm83bllHOE00a2ppX0NxMjA2NXM2dndMWFJRZ1VZSmlQNFRJeHRBQmJNM2VyRld4V0g5ZEdJY1dWN1hYSTlDYUxYdy1ONmk1SUVMQXhvX3FzejhjcGplS0pGMGVuOXViT3dHdTQ3X1ZmR1RWQ0dzV215dXM5UjZVdVF5MnpQWElPaG5PUU9nN2VuRTJTSkc0UGNmWlRHa0pueFhmeTM0TA?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772672340
+    },
+    {
+      "id": 85,
+      "summary_pt": "Putin averta que Rússia pode interromper suprimentos de gás à Europa em meio à escalação de crise energética global causada por conflito no Irã.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "NG",
+        "EWU",
+        "EWG",
+        "FXE"
+      ],
+      "headline": "Russia may halt gas supplies to Europe amid Iran energy spike, Putin says - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQaThIMHZZbEx1X281N0xJZFZkaHlZOFFkaVRwc1k3QTNqYnRCbHRjSTc1SHQzZGl4MWxTd1RkN0VhYTlnTVVVTHZ0SjZrNDNxaUdEUUdCUURrOWZpdWNFRnFpbDZOZnFpRDNuV3QxeGNBVWFWT01STkluOXlYNERJbk40M0swcktWbVhueTJlVlFBOHUyUWMwbVJrMlVYY0dDLVFmdzA3QUhUMjZEZkRPWnl6NGpSSWM4R0I0?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772645793
+    },
+    {
+      "id": 94,
+      "summary_pt": "Iran poderia disruptar Estreito de Hormuz com drones por meses, criando risco de longa duração para navegação global e suprimentos de energia estratégicos.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "CL",
+        "Brent",
+        "USO",
+        "XLE"
+      ],
+      "headline": "Iran could disrupt the Strait of Hormuz with drones for months - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZXlvWDN3QXVQYTVwbkd5cWd4VkhvX2w2bFhLMGRvLVZGcEVzMjNuTWN4U3otdGk5dUtOWUJfZHp5enY0WFRPSW1PdU1tcG9nUUk4OUUxeUxHWDkyZE0xM3JEU0lCZWFGd3RzelpNYnF0dzNiSVdNOEw2RG9uTXBES1lFNXZPbmlza0lGanQwbEJ6NzFBUHVJNzVuellpMV9tYV9qMGFjT1JpY1RSNkhtUDd2NXg?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772635366
     }
   ],
   "tweets": [],
   "analysis": {
     "overall_sentiment": "bearish",
-    "summary_pt": "Os mercados enfrentam pressão significativa de múltiplas frentes relacionadas à escalação do conflito com o Irã. Com a rejeição de resoluções sobre poderes de guerra, o Presidente Trump assegura continuidade de operações militares, aumentando prováveis disrupções de energia e tensões geopolíticas. A desconexão de Trump sobre aumentos de preços de gasolina durante estas operações sinaliza prioridade estratégica sobre estabilidade econômica doméstica, criando risco inflacionário. O isolamento do Irã, com Rússia e China recusando suporte significativo, sugere conflito prolongado sem perspectiva de resolução rápida. No front doméstico, a demissão de Kristi Noem não resolve o impasse de financiamento do DHS, mantendo incerteza política. Adicionalmente, os planos de Trump para controle mais rígido sobre exportações de chips de IA prejudicam a confiança nos gigantes da tecnologia, particularmente Nvidia. A reorientação dos fluxos de energia global (Índia comprando petróleo russo enquanto o Irã é isolado) apresenta desconexão de longo prazo nas cadeias de suprimentos. O risco geral de mercado permanece elevado, com potencial de volatilidade continuada impulsionada por fatores geopolíticos.",
+    "summary_pt": "Os mercados globais enfrentam pressão extrema de múltiplas frentes convergentes. A paralisia do Estreito de Hormuz, combinada com potencial redução de produção no Kuwait, Iraque e EAU, cria cenário de constrangimento crítico de oferta de energia. Os preços de petróleo já subiram 5%, com margens de refino asiáticas em máximas de 4 anos, sinalizando pânico de suprimento. O controle potencial de Trump sobre exportações de chips de IA prejudica Nvidia e todo o setor de semicondutores, agora ameaçado também por disrupção de materiais críticos. O conflito geopolítico está criando risco estagflacionário: Goldman Sachs e o EBRD alertam para testes severos em crescimento e inflação. Bancos europeus enfrentam pressão de crédito conforme o ECB monitora exposições, enquanto a ameaça russa de reduzir gás à Europa agrava a crise energética. A indústria de viagens global de $11,7 trilhões enfrenta disrupção severa. Trump sinalizando disposição de tolerar aumentos de gasolina e ambições de mudança de regime no Irã sugere prolongamento do conflito. Títulos são vendidos conforme Wall Street recalibra alocações de risco. O cenário macro é o de maior vulnerabilidade desde a pandemia.",
     "assets_to_watch": [
       {
-        "asset": "Crude Oil (CL)",
+        "asset": "Crude Oil (CL) / Brent",
         "direction": "up",
-        "reason_pt": "Disrupção de fornecimento do Irã e tensões do Estreito de Hormuz tendem a pressionar preços para cima, apesar da confiança de Trump em tolerar aumentos."
+        "reason_pt": "Paralisia do Hormuz, cortes de produção esperados e disrupção de suprimentos criam catalisador de alta sustentada; margens de refino em picos de 4 anos confirmam pressão severa."
       },
       {
-        "asset": "Nvidia (NVDA)",
+        "asset": "Nvidia (NVDA) / Tech Semiconductors (SMH, SOXX)",
         "direction": "down",
-        "reason_pt": "Planos de controle de exportação de chips de IA por Trump criam incerteza regulatória significativa, prejudicando perspectivas de crescimento."
+        "reason_pt": "Controle de exportação de chips de IA por Trump mais disrupção de materiais críticos criam duplo headwind para líder de IA."
       },
       {
-        "asset": "VIX (Volatilidade)",
-        "direction": "up",
-        "reason_pt": "Escalação geopolítica e isolamento do Irã tendem a manter ou expandir prêmio de risco de volatilidade."
-      },
-      {
-        "asset": "SPY (S&P 500)",
+        "asset": "S&P 500 (SPY) / NASDAQ (QQQ)",
         "direction": "down",
-        "reason_pt": "Combinação de pressão de energia, incerteza política doméstica e riscos geopolíticos cria headwind para índices de ações amplos."
+        "reason_pt": "Confluxência de risco: pressão inflacionária de energia, pressão regulatória tech, risco de crédito bancário europeu e risco geopolítico sustentado."
       },
       {
-        "asset": "Dólar (DXY)",
-        "direction": "up",
-        "reason_pt": "Turbulência geopolítica e busca de segurança tendem a beneficiar o dólar americano como ativo de refúgio."
+        "asset": "Títulos (TLT, IEF) / Bonds",
+        "direction": "down",
+        "reason_pt": "Venda de títulos acelerada por cenário estagflacionário; rendimentos sobem conforme investidores reavaliaram risco macro."
+      },
+      {
+        "asset": "Euro (FXE) / Libra (EWU)",
+        "direction": "down",
+        "reason_pt": "Ameaça de corte de gás russo mais pressão de energia europeia mais risco bancário criam triplo headwind para moedas europeias."
       },
       {
         "asset": "Ouro (GLD)",
         "direction": "up",
-        "reason_pt": "Escalação de conflito e incerteza política favorecem ouro como proteção contra inflação e risco geopolítico."
+        "reason_pt": "Escalação geopolítica, pressão inflacionária e volatilidade de mercado favorecem demanda por ativo de refúgio."
       },
       {
-        "asset": "Costco (COST)",
-        "direction": "sideways",
-        "reason_pt": "Resultado de ganhos esperado; fundamentals de consumidor podem ser afetados por pressão de energia, mas marca mantém força relativa."
+        "asset": "Setor de Viagens (IYK, XLV)",
+        "direction": "down",
+        "reason_pt": "Disrupção de $11,7 trilhões em indústria de viagens global com passageiros presos em zonas de conflito cria headwind severo para setor."
       }
     ],
-    "risk_level": "high"
+    "risk_level": "extreme"
   }
 }
