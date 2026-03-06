@@ -1,162 +1,300 @@
 {
-  "timestamp": "2026-03-05T06:12:07Z",
+  "timestamp": "2026-03-05T12:46:00Z",
   "news": [
     {
-      "title": "Fed Holds Rates Steady at 4.75% as Inflation Remains Above Target",
-      "source": "Market Analysis",
-      "summary": "O Banco Federal mantém as taxas de juros em 4,75% e sinaliza uma postura restritiva contínua enquanto a inflação permanece acima das metas de longo prazo. Investidores reprecificam expectativas de cortes de juros para a segunda metade de 2026.",
+      "id": 0,
+      "headline": "House rejects war powers resolution to rein in Trump on Iran",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/03/05/house-iran-rejects-war-powers-resolution-trump.html",
+      "image": "https://image.cnbcfm.com/api/v1/image/108273167-17725814402026-03-03t234320z_1957743287_rc2bxja1isg5_rtrmadp_0_iran-crisis-usa.jpeg?v=1772581461&w=1920&h=1080",
+      "datetime": 1772747937,
+      "summary_pt": "O Senado rejeitou uma resolução sobre poderes de guerra, permitindo que o Presidente Trump prossiga com operações militares adicionais contra o Irã.",
       "impact": "high",
       "sentiment": "bearish",
       "affected_assets": [
-        "S&P 500",
-        "Nasdaq",
-        "US 10Y Treasury",
-        "USD Index"
+        "SPY",
+        "QQQ",
+        "DXY",
+        "USO",
+        "CL"
       ]
     },
     {
-      "title": "Employment Report Shows Cooling Labor Market Growth Below Expectations",
-      "source": "Market Analysis",
-      "summary": "Dados de emprego revelam crescimento abaixo das expectativas com taxa de desemprego subindo para 4,3%. O mercado de trabalho mais fraco reforça pressão sobre o Fed para eventual flexibilização monetária.",
+      "id": 1,
+      "headline": "US House rejects war powers resolution, backs Trump on Iran war - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPRlhObXNGVVdIaHc3ajI2a1dtaEozaXA5THI4TWdiM1JSclV3M3hlSVBmYXJhbDJjNmZ5blJaY0hzeWFEbDdobnF6aGxBYk9qeUxHWnd3dHMxVFZ1cmIyd0tZOXJ3OU50MV92bjViR3lsRVRSQjNFSnMwOENJUVM4cmswdnBzUC1lc3Z5T0tJdEYyV0NMa3VqTXg5YUd1TDNrSU1xQjIxRQ?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772747385,
+      "summary_pt": "A Câmara dos Representantes rejeita moção de poderes de guerra, apoiando a continuação das ações militares de Trump contra o Irã.",
       "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "SPY",
+        "QQQ",
+        "USO",
+        "CL",
+        "VIX"
+      ]
+    },
+    {
+      "id": 2,
+      "headline": "Noem firing doesn't break DHS funding impasse, Democrats say",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/03/05/noem-firing-doesnt-break-dhs-funding-impasse-democrats-say.html",
+      "image": "https://image.cnbcfm.com/api/v1/image/108273810-17726554392026-03-04t162235z_1266368553_rc2rxja4hkse_rtrmadp_0_usa-congress-noem.jpeg?v=1772655478&w=1920&h=1080",
+      "datetime": 1772745218,
+      "summary_pt": "A demissão da Secretária de Segurança Interna Kristi Noem por Trump não resolve o impasse de financiamento do DHS em meio a um encerramento contínuo.",
+      "impact": "medium",
       "sentiment": "neutral",
       "affected_assets": [
-        "S&P 500",
-        "Treasury Bonds",
-        "USD"
+        "SPY",
+        "IYK",
+        "XLV"
       ]
     },
     {
-      "title": "Trump Administration Announces 25% Tariffs on Chinese Imports Starting March 15",
-      "source": "Market Analysis",
-      "summary": "Novas tarifas de 25% sobre importações chinesas são anunciadas para entrar em vigor no dia 15 de março, intensificando tensões comerciais. Setores de tecnologia e manufatura enfrentam pressão significativa sobre custos operacionais.",
-      "impact": "high",
-      "sentiment": "bearish",
-      "affected_assets": [
-        "Nasdaq",
-        "Technology sector",
-        "USD/CNY",
-        "Supply Chain ETFs"
-      ]
-    },
-    {
-      "title": "European Central Bank Signals Rate Cuts Ahead as Eurozone Inflation Moderates",
-      "source": "Market Analysis",
-      "summary": "O Banco Central Europeu sinaliza possíveis cortes de juros enquanto a inflação da zona do euro modera para 2,1%. Divergência de política entre Fed e BCE pressiona o par EUR/USD para novos patamares.",
-      "impact": "high",
-      "sentiment": "bearish",
-      "affected_assets": [
-        "EUR/USD",
-        "European indices",
-        "US dollar"
-      ]
-    },
-    {
-      "title": "Bitcoin Breaks $70,000 as Institutional Adoption Accelerates and Regulatory Clarity Improves",
-      "source": "Market Analysis",
-      "summary": "Bitcoin sobe acima de $70.000 impulsionado por maior adoção institucional e clareza regulatória positiva em múltiplas jurisdições. Ethereum e Solana acompanham com ganhos significativos em sentimento de risco elevado.",
+      "id": 3,
+      "headline": "China in talks with Iran to allow safe oil and gas passage through Hormuz, sources say - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPZWUyRUZqTXJBV1BybmpoNDFEb0hNQW9xUHpMRUR3YlJmMTBObUswWEdSMDR2N0xfMUdkcmppejFyLS1zNGFwYTBuZjZ0LTh0U3M3aHkxSzJnTGZoZnhTLU9LcWJlaVMwbUQ1VXAtQThrSVNVRl9ld2NOWUJHRG0wYm1RczRVVW1zWFBpbDJHakNiRG5pLXVuQU9HczIxUzVzWHVVdmlNeEp5TVJIYUdrVE1rTEk0SDlHSm1XbmpLZjZWNXhpbnc?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772741195,
+      "summary_pt": "China em negociações com o Irã para permitir passagem segura de petróleo e gás através do Estreito de Hormuz, indicando alinhamento geopolítico.",
       "impact": "medium",
-      "sentiment": "bullish",
+      "sentiment": "bearish",
       "affected_assets": [
-        "BTC",
-        "ETH",
-        "SOL",
-        "Crypto markets"
+        "USO",
+        "CL",
+        "Brent",
+        "XLE"
       ]
     },
     {
-      "title": "Oil Prices Rally on Geopolitical Tensions in the Middle East and Supply Concerns",
-      "source": "Market Analysis",
-      "summary": "Preços de petróleo sobem 8% após escalada de tensões geopolíticas no Oriente Médio e preocupações com interrupção de suprimentos. Dólar se beneficia como moeda de refúgio com commodities reagindo à incerteza.",
+      "id": 4,
+      "headline": "Nvidia shares fall on report that Trump is seeking more control of AI chip exports",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/03/05/nvidia-slides-on-report-that-trump-wants-to-make-us-ai-gatekeeper.html",
+      "image": "https://image.cnbcfm.com/api/v1/image/108254809-1768998267409-gettyimages-2256812762-AFP_93GN3UY.jpeg?v=1768998291&w=1920&h=1080",
+      "datetime": 1772738742,
+      "summary_pt": "Ações da Nvidia caem após relato de que Trump busca maior controle sobre exportações de chips de IA dos EUA, criando incerteza regulatória.",
       "impact": "high",
       "sentiment": "bearish",
       "affected_assets": [
-        "Crude Oil",
-        "Natural Gas",
-        "USD",
-        "Energy stocks"
+        "NVDA",
+        "QQQ",
+        "SMH",
+        "SOXX"
+      ]
+    },
+    {
+      "id": 5,
+      "headline": "Iran seeking to escalate conflict, EU's Kallas says - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPVTlzMkVOUy1MdFV4YTd6WURVVjFISXdaUmRvQ2s5NFRnbDduUU55QzZnR2dhaEZIWWVvUWFaeTNIcUlOaUJ5SmtCRDRKWkFXRTU0OTE3bV9QWHh5X2Z3cFBfellFRG5PdlpyZURld3M4bnhJUHU1T2E1Rmt3WkY1UGIzbkw1Qk1rTnB5RWU4ZENrRm5Zak1uckxXTHpmMmZwUkxUWEJn?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772738103,
+      "summary_pt": "A chefe da política externa da UE, Kallas, afirma que o Irã está buscando escalar o conflito, sinalizando maior tensão regional.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "VIX",
+        "USO",
+        "CL",
+        "GLD",
+        "SPY"
+      ]
+    },
+    {
+      "id": 6,
+      "headline": "Exclusive: Trump on rising gas prices during Iran operation: 'If they rise, they rise' - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPcG5QWHM0LTFkT28zMTFUSnEzcGhyclhYQ01teUx2NXZSTUNlTmpJUE1MTjNWOTk2ZjlDTkp3ek5vQ0VwOHVhWmtiM0RBNTlobkVnZjRBMmJDZHFhS3VlTl9odjk4V01EekMwWVpNUUhqZmcxS1FuSlhjblpkblRaVFEtTVVzOENyVkdqZ2p3UXVwVUFoMmhZNWtmVUpDSndIOEgzWTVHTGg5VkVPMVJabVM4eDdIY1BEaXJSWQ?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772737497,
+      "summary_pt": "Trump declara estar disposto a tolerar aumentos de preços de gasolina durante operação no Irã, sinalizando prioridade geopolítica sobre questões econômicas domésticas.",
+      "impact": "medium",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "USO",
+        "CL",
+        "XLE",
+        "SPY"
+      ]
+    },
+    {
+      "id": 7,
+      "headline": "NATO increases missile defence posture after Turkey incident - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPLXduSW02ZVpKUmxzLWRCVEJ2QWNtbkttcUxfWlZFUm5yby1qcDRQYU5yVEVTUlN5dTJwN09JR3VmYjc1bENEZW9IYk05VGJJcjdmeFdLSzdRaUZzOXU0bGIxQWFaNmJWdGI2UHZQakd5MnBtdE9rQUxUci1tbUFTZUwzU2puZ0kzWEZrU1NqVkdxWXIwS3FpcXhkN3hOYWZkU1JnNg?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772736785,
+      "summary_pt": "A OTAN aumenta sua postura de defesa de mísseis após incidente na Turquia, refletindo escalação das tensões regionais.",
+      "impact": "medium",
+      "sentiment": "neutral",
+      "affected_assets": [
+        "ITA",
+        "LMT",
+        "RTX",
+        "NOC"
+      ]
+    },
+    {
+      "id": 8,
+      "headline": "US, Qatar discuss acquiring Ukrainian drones to down Iran's Shaheds, source says - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQOFZJbHYtUldySVZjQi15MDFPcE1ZQWdZYzB4VWw1aDdDeEdZemRIM0xSeEtIV3NMeXBCeTlXMV9veUdZWjRJcWt2TXNDUC04WUNKZWhUTTJYTW9nbXJIdFZ5ZG9aMlQ3SzJsNnJZMTVDSGhOU01JMHg1WFFZRGJIS1dQcHV0NFJESlVLakZROG5OdWdYa0IyemdmY0k2SnRCYUlPUWpBZDZrNF9HeE9ndm54bEVReVpwRzZvTE4zNktsTkhhMUxSc05zZm5vVUwwNVVN?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772736607,
+      "summary_pt": "EUA e Qatar discutem aquisição de drones ucranianos para neutralizar mísseis iranianos Shaheds, expandindo coalizão de defesa aérea.",
+      "impact": "medium",
+      "sentiment": "neutral",
+      "affected_assets": [
+        "LMT",
+        "RTX",
+        "NOC",
+        "ITA"
+      ]
+    },
+    {
+      "id": 9,
+      "headline": "Exclusive: Indian refiners buying prompt Russian oil as Iran war hits supplies, sources say - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPV2xsNFhJWVN2Rnpjb2VXNUIwMXA5TDJYeUVDaFh1bVVMRFdHZWRNemdPRG1IeXh6MEdqazR0MVhrTnQ1MUFicDdZbzFxUERNN3ltam1IYldpam5aeXExZmVpMTVSTWNfSFNGb2xfRGhLNTBTdUVGMGNUWk9kX3k3NlhFLW93OHFRcEFJSTE2V3NCZjZycUxfeUhlempva3JXOUJadmtVLUhUYlcyenB6akdIRDAVZjhkQ1UwWWFVcVI0NlRGR25Z?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772733753,
+      "summary_pt": "Refinarias indianas compram petróleo russo imediato enquanto guerra com Irã reduz suprimentos, reorientando fluxos globais de energia.",
+      "impact": "medium",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "USO",
+        "CL",
+        "Brent",
+        "XLE"
+      ]
+    },
+    {
+      "id": 10,
+      "headline": "Trump renews Netanyahu pardon call, saying only Iran should be troubling him - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPcEJMMThNbHFlb3BOSkhiR0pUWWtjQ2kzZnRaempoT1AxeGdoUldKckFKUF9IM2czbnFMQVkyQ0Y0b1JlNEtpblI3TTEwVm55aEI4ZXQ5bnUzNENDLVU2SHlVNXhKRTl4RTNDMkRCVzR4d21yUVNTc05lNkN0RXBtZUEzVl9oRHBna1NuLXhOUlp2VElFenlSdjRyYkx4b01JZVlXcDB6WXNCS2VWY2FQZnlWTURoM3BORTFxRVQ5OTNpWFZ3NGxrVw?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772733099,
+      "summary_pt": "Trump reafirma pedido de indulto para Netanyahu, argumentando que apenas o Irã deveria ser preocupação dele, refletindo alinhamento estratégico.",
+      "impact": "low",
+      "sentiment": "neutral",
+      "affected_assets": [
+        "SPY"
+      ]
+    },
+    {
+      "id": 11,
+      "headline": "In a few days it will be harder for Iran to disrupt shipping, Israeli envoy says - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNRXF6bTRKeUJNb2s4dVJGeFFmUDBTclYxM01YdkZKSWp6MjR2eUFBUFBja3ltQWc5SU1ISUx6djE0RjNoak9tbnlFR2x3VXk2TzQ2MGlSWjZFSHY5Tk5mU1dtYkhqdVdaUEE4cTdnQ0tzSGw3cGxrUDBBenVJdDNIQXFrZ3ZvWm5qQmRsX3FqWExhS1YycFZidlpYazVlVnp1bjZCVTNNUzVXSGZwdFFXNzB4d0d4SU5Jc2FVcmRR?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772732959,
+      "summary_pt": "Enviado israelense afirma que em poucos dias será mais difícil para o Irã interferir no tráfego marítimo, sugerindo progresso militar iminente.",
+      "impact": "medium",
+      "sentiment": "neutral",
+      "affected_assets": [
+        "USO",
+        "CL",
+        "GC",
+        "ZB"
+      ]
+    },
+    {
+      "id": 12,
+      "headline": "Isolated and under fire: Iran strikes out as Russia and China stand aside - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNRW56dklzOENvM3B0NXd6em8wSWJ6dmNvY2lDM19oSjF0NUNzcVVLQjN4OFQzYTQ5dmxNaU9WQmdaTnRjMGdVWkRXc2NsOGEzdW41QS0zZTd1alhselY3TV9pSTF5UloyMFZqLUxRdkxOOTJyamtkMXNDczdwaDhpSVI3Q3lMWVFRYnlLNDZQYk83WHVqcXc2d2R0TjFuenZPOEZzTHFqTGVsQThSa2FyYndhazhKQQ?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772731712,
+      "summary_pt": "Irã isolado sob fogo enquanto Rússia e China se afastam, deixando-o sem suporte geopolítico significativo contra coalizão internacional.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "VIX",
+        "USO",
+        "CL",
+        "SPY",
+        "DXY"
+      ]
+    },
+    {
+      "id": 13,
+      "headline": "The metric we care most about when Costco reports earnings after the closing bell",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/03/05/the-metric-we-care-most-about-when-costco-reports-earnings-thursday.html",
+      "image": "https://image.cnbcfm.com/api/v1/image/108254607-1768945138416-gettyimages-2223587166-costco2504.jpeg?v=1772728221&w=1920&h=1080",
+      "datetime": 1772731277,
+      "summary_pt": "Análise focada na métrica chave para relatório de ganhos da Costco após o fechamento do mercado, com ênfase em métricas de desempenho críticas.",
+      "impact": "low",
+      "sentiment": "neutral",
+      "affected_assets": [
+        "COST",
+        "XRT"
+      ]
+    },
+    {
+      "id": 14,
+      "headline": "Exclusive: Trump tells Reuters US must have a role in choosing Iran's next leader - Reuters",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNV2ZIYlZxc1VuZ2RmSXBJUjhueTVacXVrdmxUQUNZUE8wSDJLQ0YxOWxLcl9nNmdBX1pkMVNMd3ZZR2tWNVRvejFhUnduVlAweFlfTjN0U1NTR2tUb2xnZkdqdHN1ZzhMSHhwcVlBQ25EYmJxUVFBVlU3S09RLTlBWW5iNlMtYmlyS0RXUTZMOHMtM2hkM2xzRU1oaGpzQ0pEc3lUek9lQ08wM1p0Q2lfdGxsZFMwY2JjRUE?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "datetime": 1772731257,
+      "summary_pt": "Trump afirma que EUA devem ter papel na escolha do próximo líder do Irã, sinalizando ambição de mudança de regime pós-conflito.",
+      "impact": "high",
+      "sentiment": "bearish",
+      "affected_assets": [
+        "VIX",
+        "DXY",
+        "USO",
+        "CL",
+        "GLD"
       ]
     }
   ],
-  "tweets": [
-    {
-      "author": "Donald Trump",
-      "handle": "@realDonaldTrump",
-      "content": "China has stolen our jobs for decades. These 25% tariffs are necessary to bring manufacturing back to America. American workers will be winners!",
-      "summary_pt": "Trump reafirma sua posição sobre tarifas contra a China como medida essential para trazer manufatura de volta aos EUA e proteger trabalhadores americanos.",
-      "impact": "high",
-      "sentiment": "bearish",
-      "affected_assets": [
-        "USD",
-        "US indices",
-        "Chinese markets"
-      ]
-    },
-    {
-      "author": "Jerome Powell",
-      "handle": "@federalreserve",
-      "content": "The Fed remains focused on price stability and maximum employment. Current restrictive policy is appropriate given persistent inflation pressures.",
-      "summary_pt": "Powell mantém tom firme sobre a necessidade de política monetária restritiva para controlar inflação persistente, sinalizando cautela sobre cortes futuros.",
-      "impact": "high",
-      "sentiment": "bearish",
-      "affected_assets": [
-        "US Treasury bonds",
-        "S&P 500",
-        "Equity markets"
-      ]
-    },
-    {
-      "author": "Elon Musk",
-      "handle": "@elonmusk",
-      "content": "Tesla's Q1 deliveries tracking well. Giga Berlin ramping beautifully. Energy business growing exponentially. AI is the future—Grok 3 training now.",
-      "summary_pt": "Musk expressa otimismo com entrega de veículos, ramp de produção e crescimento exponencial do negócio de energia, mantendo postura bullish sobre a Tesla.",
-      "impact": "medium",
-      "sentiment": "bullish",
-      "affected_assets": [
-        "TSLA",
-        "EV sector",
-        "Energy storage"
-      ]
-    }
-  ],
+  "tweets": [],
   "analysis": {
     "overall_sentiment": "bearish",
-    "summary_pt": "O cenário macroeconômico de março de 2026 permanece desafiador com o Fed mantendo taxas de juros em níveis restritivos enquanto a inflação persiste acima de suas metas. A combinação de uma política monetária apertada nos EUA com sinais de flexibilização na Europa cria divergências significativas nas políticas globais, pressurando pares cambiais como EUR/USD. Simultaneamente, a escalada de tensões comerciais entre EUA e China, especialmente as tarifas anunciadas de 25%, introduz volatilidade adicional nos mercados de ações e cadeia de suprimentos globais.\n\nOs mercados de renda variável enfrentam pressão de múltiplas valorizações em um ambiente de juros elevados, enquanto o mercado de trabalho mais fraco começa a indicar sinais de desaceleração econômica. Setores ligados à tecnologia e manufatura são particularmente vulneráveis às tarifas propostas. Por outro lado, criptomoedasShowtime sinais de força com Bitcoin ultrapassando $70.000, sugerindo que certos investidores estão buscando proteção além de ativos tradicionais. Commodities como ouro e petróleo beneficiam-se do aumento de risco geopolítico no Oriente Médio e da demanda por refúgio.\n\nOs investidores devem monitorar de perto os dados de inflação CPI dos EUA, pronunciamentos adicionais do Fed sobre o trajetória de juros, e negociações relacionadas às tarifas. O divergente entre ciclos de política nos EUA e na Europa mantém volatilidade no mercado de câmbio, enquanto a incerteza geopolítica e comercial sugere um ambiente de risco elevado para ações de múltiplas capitalização nos próximos meses.",
+    "summary_pt": "Os mercados enfrentam pressão significativa de múltiplas frentes relacionadas à escalação do conflito com o Irã. Com a rejeição de resoluções sobre poderes de guerra, o Presidente Trump assegura continuidade de operações militares, aumentando prováveis disrupções de energia e tensões geopolíticas. A desconexão de Trump sobre aumentos de preços de gasolina durante estas operações sinaliza prioridade estratégica sobre estabilidade econômica doméstica, criando risco inflacionário. O isolamento do Irã, com Rússia e China recusando suporte significativo, sugere conflito prolongado sem perspectiva de resolução rápida. No front doméstico, a demissão de Kristi Noem não resolve o impasse de financiamento do DHS, mantendo incerteza política. Adicionalmente, os planos de Trump para controle mais rígido sobre exportações de chips de IA prejudicam a confiança nos gigantes da tecnologia, particularmente Nvidia. A reorientação dos fluxos de energia global (Índia comprando petróleo russo enquanto o Irã é isolado) apresenta desconexão de longo prazo nas cadeias de suprimentos. O risco geral de mercado permanece elevado, com potencial de volatilidade continuada impulsionada por fatores geopolíticos.",
     "assets_to_watch": [
       {
-        "asset": "S&P 500",
-        "direction": "down",
-        "reason_pt": "Pressão de juros elevados, multiplas de valização reduzidas e preocupações com impacto de tarifas sobre lucros corporativos."
-      },
-      {
-        "asset": "Nasdaq-100",
-        "direction": "down",
-        "reason_pt": "Setor de tecnologia particularmente vulnerável a tarifas e custos de pesquisa em IA elevados comprimem margens."
-      },
-      {
-        "asset": "EUR/USD",
-        "direction": "down",
-        "reason_pt": "Divergência de política monetária com Fed restritivo e BCE preparado para cortes leva dólar mais forte e euro mais fraco."
-      },
-      {
-        "asset": "Bitcoin (BTC)",
+        "asset": "Crude Oil (CL)",
         "direction": "up",
-        "reason_pt": "Demanda como proteção contra política monetária tradicional e incerteza macro impulsiona adoção institucional e preços mais altos."
+        "reason_pt": "Disrupção de fornecimento do Irã e tensões do Estreito de Hormuz tendem a pressionar preços para cima, apesar da confiança de Trump em tolerar aumentos."
       },
       {
-        "asset": "Ouro",
-        "direction": "up",
-        "reason_pt": "Aumento de prêmios de risco geopolítico, incerteza comercial e demanda por ativos de refúgio sustentam preços elevados."
-      },
-      {
-        "asset": "BRL/USD",
+        "asset": "Nvidia (NVDA)",
         "direction": "down",
-        "reason_pt": "Real brasileiro sob pressão com fluxos para moedas de refúgio, juros reais negativos e incerteza fiscal."
+        "reason_pt": "Planos de controle de exportação de chips de IA por Trump criam incerteza regulatória significativa, prejudicando perspectivas de crescimento."
       },
       {
-        "asset": "Crude Oil",
+        "asset": "VIX (Volatilidade)",
         "direction": "up",
-        "reason_pt": "Tensões geopolíticas no Oriente Médio combinadas com preocupações de suprimento mantêm pressão alista nos preços."
+        "reason_pt": "Escalação geopolítica e isolamento do Irã tendem a manter ou expandir prêmio de risco de volatilidade."
+      },
+      {
+        "asset": "SPY (S&P 500)",
+        "direction": "down",
+        "reason_pt": "Combinação de pressão de energia, incerteza política doméstica e riscos geopolíticos cria headwind para índices de ações amplos."
+      },
+      {
+        "asset": "Dólar (DXY)",
+        "direction": "up",
+        "reason_pt": "Turbulência geopolítica e busca de segurança tendem a beneficiar o dólar americano como ativo de refúgio."
+      },
+      {
+        "asset": "Ouro (GLD)",
+        "direction": "up",
+        "reason_pt": "Escalação de conflito e incerteza política favorecem ouro como proteção contra inflação e risco geopolítico."
+      },
+      {
+        "asset": "Costco (COST)",
+        "direction": "sideways",
+        "reason_pt": "Resultado de ganhos esperado; fundamentals de consumidor podem ser afetados por pressão de energia, mas marca mantém força relativa."
       }
     ],
     "risk_level": "high"
